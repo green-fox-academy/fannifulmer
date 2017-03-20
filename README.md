@@ -1,2 +1,1 @@
-fannifulmer
-[https://github.com/greenfox-academy/zodiac-syllabus]
+[Zodiac syllabus](https://github.com/greenfox-academy/zodiac-syllabus)
