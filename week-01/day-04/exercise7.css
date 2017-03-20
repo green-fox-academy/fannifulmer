@@ -1,0 +1,17 @@
+.big {
+    color: blue;
+}
+
+.container div {
+    border: 1px solid green;
+    max-width: 300px;
+}
+
+div {
+    font-weight: bold;
+}
+
+p {
+    background-color: yellow;
+    max-width: 300px;
+}

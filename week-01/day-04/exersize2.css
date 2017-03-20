@@ -1,0 +1,44 @@
+* {
+    margin: 0px
+    padding: 0px;
+}
+
+p {
+    padding: 55px 25px 85px 25px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    box-sizing:border-box;
+
+    height: 100px;
+    text-align: center;
+    font-size: 36px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+.north {
+    background-color: rgb(230, 118, 118);
+}
+
+.east {
+    background-color: rgb(242, 240, 98);
+}
+
+.south {
+    background-color: rgb(169, 230, 230);
+}
+
+.west {
+    background-color: rgb(118, 146, 228);
+}
+
+div {
+    border-color: rgb(66, 133, 244);
+    border-style: solid;
+    border-width: 16px;
+    margin: 0px;
+    width: 350px;
+
+}

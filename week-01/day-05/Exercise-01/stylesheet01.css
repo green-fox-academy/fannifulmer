@@ -1,0 +1,23 @@
+p {
+    font-size: 18px;
+    border: solid;
+    border-width: 2px;
+    margin: 0px;
+    width: 340px;
+    border-top: 0px;
+    box-sizing: border-box;
+    padding: 25px;
+}
+
+p:last-child {
+    border-bottom: 0px;
+    margin-bottom: 50px;
+}
+
+p:hover {
+    background: #ec6842;
+}
+
+p, h1 {
+    margin-left: 48px;
+}

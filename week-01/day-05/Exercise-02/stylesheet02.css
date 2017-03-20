@@ -1,0 +1,29 @@
+p {
+    width: 200px;
+    margin: 10px;
+    padding: 20px 40px;
+    text-align: center;
+    font-size: 16px;
+    font-family: courier;
+    color: white;
+    background-repeat: no-repeat;
+    background-image: url(duck.png);
+}
+
+.pink {
+    background-color: #ff6347;
+    background-position: center left;
+    background-size: 56px 50px;
+}
+
+.purple {
+    background-color: #643579;
+    background-position: center;
+    background-size: 120px 100px;
+}
+
+.grey {
+    background-color: #808080;
+    background-position: bottom right;
+    background-size: 50px 45px;
+}

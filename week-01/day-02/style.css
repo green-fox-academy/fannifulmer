@@ -1,0 +1,64 @@
+body {
+    margin:0;
+    color: rgba(0, 0, 0, 0.8);
+    font-family: 'Merriweather', serif;
+}
+
+header h1 {
+    text-align: left;
+}
+
+div {
+    text-align: center;
+}
+
+img {
+    width:100%;
+    float: left;
+}
+
+.erikahall {
+    width: 50%;
+    margin-right: 20px;
+}
+
+a {
+    color: black;
+    font-weight: bold;
+}
+
+article {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 30px;
+}
+
+h1, h2 {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    margin:0;
+}
+
+h1 {
+    font-size: 34px;
+    line-height: 40px;
+}
+
+h2 {
+    color: #aaa;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 28px;
+}
+
+/*p {
+    padding: 30px;
+    margin: 10px;
+    border: 20px;
+    width: 200p
+    box-sizing:border-box;
+}*/

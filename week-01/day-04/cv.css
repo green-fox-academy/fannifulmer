@@ -1,0 +1,69 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+div {
+    margin: 60px 50px 65px 50px;
+}
+div, section {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: sans-serif;
+    line-height: 1.5;
+
+}
+header {
+    width: 1280px;
+    height: 400px;
+    background-position: center;
+    background-image: url(anakin.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-size: 18px;
+}
+
+.header {
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    font-size: 14px;
+}
+
+li {
+    list-style: square;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 65px;
+}
+
+h3 {
+    font-style: italic;
+}
+
+blockquote {
+    background: #444444;
+    color: white;
+    font-size: 40px;
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    text-align: center;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+blockquote:before {
+    color: white;
+    content: "“";
+    font-size: 80px;
+}

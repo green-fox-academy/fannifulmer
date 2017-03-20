@@ -1,0 +1,11 @@
+pre {
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+span {
+    color: rgb(248, 171, 42);
+    font-size: 24px;
+    font-family: TimesNewRoman;
+    font-weight: bold;
+}
