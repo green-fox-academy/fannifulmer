@@ -4,7 +4,8 @@
 # - Print the result of `appendA(am)`
 
 am = "kuty"
-def appendA():
-    print(am + "a")
+def appendA(am):
+    animal = am + "a"
+    print(animal)
 
-appendA()
+appendA(am)
