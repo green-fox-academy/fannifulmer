@@ -1,6 +1,6 @@
 def palidrome():
-    word = insert("Please write down a word: ")
-    word = word[::-1]
-    return
+    word = input("Please write down a word: ")
+    word = word + word[::-1]
+    print(word)
 
-print(word)
+palidrome()
