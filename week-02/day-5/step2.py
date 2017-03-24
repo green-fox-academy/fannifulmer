@@ -1,10 +1,4 @@
-import random
-x = input("Please select a range for your number guess, where should i start: ")
-y = input("Please select a range for your number guess, where should i stop: ")
-
-szam = random.randrange(int(x), int(y))
-print(szam)
-print("Your range will be between ", int(x),"-", int(y))
+szam = 5
 tipp = int(input("Please type in a number: "))
 gamerunnig = True
 
