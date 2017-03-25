@@ -6,12 +6,9 @@ boys = ["Joe","Fred","Béla","Todd","Neef","Jeff"]
 order = []
 
 
-for i in girls:
-    print(i)
-    for n in boys:
-
-        print(n)
-
-
-
-#print(order)
+for i in range(0,len(girls)):
+    order.append(girls[i])
+    order.append(boys[i])
+    i += 1
+order.append(boys[5])
+print(order)
