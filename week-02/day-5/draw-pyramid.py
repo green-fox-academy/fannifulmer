@@ -11,9 +11,5 @@
 
 x = int(input("Please insert a number, so i can draw a pyramid for you: "))
 
-space = " "
-star = "*"
-star = x * "*"
-for i in range(0, x-1):
-
-    print(star + space)
+for i in range(1,x+1):
+    print(" "*(x-i) + (((i*2)-1))*"*")
