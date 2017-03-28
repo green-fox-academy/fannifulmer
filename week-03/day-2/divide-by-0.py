@@ -3,8 +3,9 @@
 # and prints the result.
 # it should print "fail" if the parameter is 0
 try:
-    x = int(input("Please insert a number: "))
-    print(10/x)
-
+    def ten_divider(divide = 10):
+        x = int(input("Please insert a number: "))
+        print(divide/x)
+    ten_divider()
 except ZeroDivisionError:
-     print("Sorry, I can not work with that number!")
+    print("Sorry, I can not work with that number!")
