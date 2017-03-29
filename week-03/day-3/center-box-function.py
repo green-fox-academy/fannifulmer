@@ -6,7 +6,7 @@ canvas = Canvas(root, width='300', height='300')
 canvas.pack()
 
 def centersquare_drawing (x):
-    square = canvas.create_rectangle(150-x, 150-x, x+150, x+150, fill="blue", width= 2)
+    square = canvas.create_rectangle(150-x/2, 150-x/2, x/2+150, x/2+150, fill="blue", width= 2)
 centersquare_drawing(90)
 centersquare_drawing(70)
 centersquare_drawing(30)
