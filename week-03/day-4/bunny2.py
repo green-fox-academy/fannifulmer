@@ -4,7 +4,7 @@
 # number of "ears" in the bunny line 1, 2, ... n (without loops or multiplication).
 
 
-line = 6
+line = 3
 def wierdbunnyearcal(line):
     if line == 0:
         return line
