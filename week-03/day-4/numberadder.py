@@ -5,6 +5,6 @@ def fractal_counter(n):
     if n <= 1:
         return 1
     else:
-        return n * fractal_counter(n-1)
+        return n + fractal_counter(n-1)
 
-(fractal_counter(n))
+print(fractal_counter(n))
