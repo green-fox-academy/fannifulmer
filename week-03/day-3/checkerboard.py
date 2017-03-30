@@ -1,39 +1,27 @@
+import time
 from tkinter import *
-
 root = Tk()
 
 canvas = Canvas(root, width='300', height='300')
 canvas.pack()
 
-#def checkboard (x, color):
-#    bsquare = canvas.create_rectangle(x1, y1, x2, y2, fill=color)
-#    wsquare = canvas.create_rectangle(x1, y1, x2, y2, fill=color)
-
-w = 50
-x = 0
-y = 0
-
-canvas.create_rectangle(x, y, w, w)
-for row in range(7):
-    for col in range(7):
-        canvas.create_rectangle(x, y, w, w)
-        x = x + w
-    y = y + w
+def making_a_grid():
+    w = 50
     x = 0
+    y = 0
+    for col in range(6):
+        for row in range(6):
+            time.sleep(0.10)
+            if (col + row) % 2 == 0:
+                canvas.create_rectangle(x, y, x+w, y+w, fill='black', width = 0)
+            else:
+                canvas.create_rectangle(x, y, x+w, y+w, fill='white', width = 0)
+            canvas.update()
+            x = x + w
+        y = y + w
+        x = 0
 
+making_a_grid()
 
-'''color = ["black", "white"]
-x1 = 0
-y1 = 0
-x2 = 50
-y2 = 50
-x = 300
-for i in range(len(color)):
-    checkboard(x, color[i])
-    x -= 300/len(color)
-    x1 += 50
-    y2 += 50
-
-# fill the canvas with a checkerboard pattern.'''
 
 root.mainloop()
