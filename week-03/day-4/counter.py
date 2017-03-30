@@ -4,7 +4,7 @@ n = 3
 def fractal_counter(n):
     print(n)
     if n == 0:
-        return 0
+        return n
     else:
         return n, fractal_counter(n-1)
 

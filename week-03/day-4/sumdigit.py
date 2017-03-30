@@ -5,7 +5,7 @@
 n = 126
 def sumdigit(n):
     if n <= 1:
-        return 1
+        return n
     else:
         return (n % 10) + sumdigit(n//10)
 
