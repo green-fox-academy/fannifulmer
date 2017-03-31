@@ -12,7 +12,6 @@ def make_a_square(x, y, size):
 def making_six_sguares(x, y, size):
     make_a_square(x, y, size)
     if size > 5:
-        time.sleep(0.10)
         making_six_sguares(x+size/3, y, size/3)
         making_six_sguares(x+size*2/3, y+size/3, size/3)
         making_six_sguares(x, y+size/3, size/3)
