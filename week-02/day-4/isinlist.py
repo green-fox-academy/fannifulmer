@@ -4,11 +4,11 @@
 
 listOfNumbers = [2, 4, 6, 8, 10, 12, 14, 16]
 list = [4, 8, 12, 16]
-def numberfinder():
-    for i in range(len(listOfNumbers)):
-        if list 
-        return True
-return False
 
+def numberfinder(list, listOfNumbers):
+    for element in list:
+        if element not in listOfNumbers:
+            return False
+    return True
 
-numbergenerator()
+print(numberfinder(list, listOfNumbers))
