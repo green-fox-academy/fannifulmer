@@ -1,3 +1,4 @@
+import time
 from tkinter import *
 
 root = Tk()
@@ -11,8 +12,9 @@ def stair_maker(x, y):
 x = 10
 y = 20
 for i in range(19):
+    time.sleep(0.10)
     stair_maker(x, y)
     x = y
     y += 10
-
+    canvas.update()
 root.mainloop()

@@ -1,3 +1,4 @@
+import time
 from tkinter import *
 
 root = Tk()
@@ -11,7 +12,8 @@ def centersquare_drawing (x, color):
 color = ["red", "orange", "yellow", "green", "blue", "purple", "violet"]
 x = 300
 for i in range(len(color)):
+    time.sleep(0.50)
     centersquare_drawing(x, color[i])
     x -= 300/len(color)
-
+    canvas.update()
 root.mainloop()
