@@ -10,20 +10,17 @@ answer()'''
 
 class Student():
     def learn(self):
-        pass
+        print('learn')
     def question(self, teacher):
         teacher.answer()
              #self.answer
 class Teacher():
-    def __init__(self, hair):
-        self.hair = hair
     def teach(self, student):
-        student.learn         #self.learn
+        student.learn()         #self.learn
     def answer(self):
-        print(self.hair)
+        print('answer')
 
 Sanyi = Student()
-Bela = Teacher('black')
-Gabor = Teacher('brown')
+Bela = Teacher()
 Sanyi.question(Bela)
-Sanyi.question(Gabor)
+Bela.teach(Sanyi)
