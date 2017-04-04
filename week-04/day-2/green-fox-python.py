@@ -26,9 +26,6 @@ class Person():
     def get_goal(self):
         print("My goal is: Live for the moment!")
 
-jane = Person()
-jane.introduce()
-jane.get_goal()
 
 
 '''Student
@@ -59,6 +56,14 @@ class Student(Person):
 
     def introduce(self):
         print("Hi, I'm", self.name, "a", self.age, "year old", self.gender, "from previous_organization", self.previous_organization, "who skipped", skipped_days, "days from the course already." )
+
+    def skip_days(self, number_of_days):
+        self.skipped_days += number_of_days
+
+
+#jane = Student()
+#jane.skip_days(3)
+#print(jane.skipped_days)
 
 '''Mentor
 
@@ -102,4 +107,49 @@ The Sponsor class has the following constructors:
 Sponsor(name, age, gender, company): beside the given parameters, it sets hired_students to 0
 Sponsor(): sets name to Jane Doe, age to 30, gender to female, company to Google and hired_students to 0'''
 
-#class Sponsor(Person):
+class Sponsor(Person):
+    def __init__(self, name = 'Jane Doe', age = 30, gender = 'female', company = 'Google', hired_students = 0):
+        super().__init__(name, age, gender)
+        self.company = company
+        self.hired_students = hired_students
+
+    def introduce(self):
+        print("Hi, I'm", self.name, "a", self.age, "year old", self.gender, "who represents", company, "and hired", hired_students, "students so far.")
+
+    def hire(self):
+        self.hired_students += 1
+
+    def get_goal(self):
+        print("Hire brilliant junior software developers.")
+
+
+'''LagopusClass
+
+Create a LagopusClass class that has the following
+
+fields:
+class_name: the name of the class
+students: a list of Students
+mentors: a list of Mentors
+methods:
+add_student(Student): adds the given Student to students list
+add_student(Mentor): adds the given Mentor to mentors list
+info(): prints out "Lagopus class_name class has students.size students and mentors.size mentors."
+The LagopusClass class has the following constructors:
+
+LagopusClass(class_name): beside the given parameter, it sets students and mentors as empty lists'''
+
+class LagopusClass():
+    def __init__(self, class_name = 'Zodiac', students = 0, mentors = 0):
+        self.class_name = class_name
+        students = []
+        mentors = []
+
+    def add_student(self, student):
+        self.students.append(student)
+
+    def add_mentors(self, mentor):
+        self.mentors.append(mentor)
+
+    def info():
+        print("Lagopus", class_name, "class has", len(students), "students and", len(mentors), "mentors.")
