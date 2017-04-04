@@ -14,24 +14,29 @@ when watering it the tree can only absorb the 40% of the water
 eg. watering with 10 the tree's amount of water should only increase with 4'''
 
 class Garden():
-    def __init__(self, plant_type):
+    def __init__(self, color, water_amount = 0):
         self.color = color
-        self.plant_type = plant_type
 
-    def watering(self, water_level = 0):
-        self.watering = (water_amount)/plants_amount
+    def watering(self, water_level):
+        self.watering = (water_level)/len(needs_water)
+
 
 class Flower(Garden):
-    def __init__(self, color, plant_type = 'flower'):
-        needs_water: []
+    def __init__(self, color, water_amount = 0):
         self.color = color
-        self.plant_type = 'flower'
         self.water_amount = water_amount
 
-    def add_water():
+    def add_water(self, flower):
         if water_amount < 5:
+            self.needs_water.addend(flower)
 
+    def absorb_water(self, flower)
+        needs_water = []
 
-class Tree(Flower):
+class Tree(Garden):
     def __init__(self, color, water_amount = 0):
         super().__init__(color, water_amount)
+
+    def add_water(self, tree):
+        if water_amount < 10:
+            self.needs_water.addend(tree)
