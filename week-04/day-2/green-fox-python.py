@@ -55,7 +55,7 @@ class Student(Person):
         print("Be a junior software developer.")
 
     def introduce(self):
-        print("Hi, I'm", self.name, "a", self.age, "year old", self.gender, "from previous_organization", self.previous_organization, "who skipped", skipped_days, "days from the course already." )
+        print("Hi, I'm", self.name, "a", self.age, "year old", self.gender, "from previous_organization", self.previous_organization, "who skipped", self.skipped_days, "days from the course already." )
 
     def skip_days(self, number_of_days):
         self.skipped_days += number_of_days
@@ -140,16 +140,51 @@ The LagopusClass class has the following constructors:
 LagopusClass(class_name): beside the given parameter, it sets students and mentors as empty lists'''
 
 class LagopusClass():
-    def __init__(self, class_name = 'Zodiac', students = 0, mentors = 0):
+    def __init__(self, class_name = 'Zodiac'):
         self.class_name = class_name
-        students = []
-        mentors = []
+        self.students = []
+        self.mentors = []
 
     def add_student(self, student):
         self.students.append(student)
 
-    def add_mentors(self, mentor):
+    def add_mentor(self, mentor):
         self.mentors.append(mentor)
 
-    def info():
-        print("Lagopus", class_name, "class has", len(students), "students and", len(mentors), "mentors.")
+    def info(self):
+        print("Lagopus", self.class_name, "class has", len(self.students), "students and", len(self.mentors), "mentors.")
+
+people = []
+
+mark = Person('Mark', 46, 'male')
+people.append(mark)
+jane = Person()
+people.append(jane)
+john = Student('John Doe', 20, 'male', 'BME')
+people.append(john)
+student = Student()
+people.append(student)
+gandhi = Mentor('Gandhi', 148, 'male', 'senior')
+people.append(gandhi)
+mentor = Mentor()
+people.append(mentor)
+sponsor = Sponsor()
+elon = Sponsor('Elon Musk', 46, 'male', 'SpaceX')
+student.skip_days(3)
+
+for i in range(5):
+    elon.hire()
+
+for i in range(3):
+    sponsor.hire()
+
+for member in people:
+    member.introduce()
+    member.get_goal()
+
+badass = LagopusClass('BADA55')
+badass.add_student(student);
+badass.add_student(john);
+badass.add_mentor(mentor);
+badass.add_mentor(gandhi);
+badass.info();
