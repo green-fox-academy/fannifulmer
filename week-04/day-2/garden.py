@@ -12,3 +12,26 @@ The Tree
 needs water if its current water amount is less then 10
 when watering it the tree can only absorb the 40% of the water
 eg. watering with 10 the tree's amount of water should only increase with 4'''
+
+class Garden():
+    def __init__(self, plant_type):
+        self.color = color
+        self.plant_type = plant_type
+
+    def watering(self, water_level = 0):
+        self.watering = (water_amount)/plants_amount
+
+class Flower(Garden):
+    def __init__(self, color, plant_type = 'flower'):
+        needs_water: []
+        self.color = color
+        self.plant_type = 'flower'
+        self.water_amount = water_amount
+
+    def add_water():
+        if water_amount < 5:
+
+
+class Tree(Flower):
+    def __init__(self, color, water_amount = 0):
+        super().__init__(color, water_amount)
