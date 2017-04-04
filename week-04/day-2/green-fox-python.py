@@ -114,7 +114,7 @@ class Sponsor(Person):
         self.hired_students = hired_students
 
     def introduce(self):
-        print("Hi, I'm", self.name, "a", self.age, "year old", self.gender, "who represents", company, "and hired", hired_students, "students so far.")
+        print("Hi, I'm", self.name, "a", self.age, "year old", self.gender, "who represents", self.company, "and hired", self.hired_students, "students so far.")
 
     def hire(self):
         self.hired_students += 1
@@ -170,6 +170,7 @@ mentor = Mentor()
 people.append(mentor)
 sponsor = Sponsor()
 elon = Sponsor('Elon Musk', 46, 'male', 'SpaceX')
+people.append(elon)
 student.skip_days(3)
 
 for i in range(5):
