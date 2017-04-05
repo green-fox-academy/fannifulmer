@@ -8,13 +8,17 @@ class Apples():
             start+=num
         return start
 
-    #def anagram(self):
+    def anagram(self, string1 ='', string2 =''):
+        newstring = list(string1)
+        newstring.sort()
+        newstring2 = list(string2)
+        newstring2.sort()
+
+        if newstring == newstring2:
+            return True
+        else:
+            newstring != newstring2
+            return False
+
+
 apple = Apples()
-print(apple.sum([1,2,3]))
-
-
-
-'''Anagram
-
-Write a function, that takes two strings and returns a boolean value based on if the two strings are Anagramms or not.
-Create a test for that.'''
