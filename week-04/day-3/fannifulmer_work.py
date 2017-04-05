@@ -20,5 +20,23 @@ class Apples():
             newstring != newstring2
             return False
 
+    def count_letters(self, string=''):
+        dic = dict()
+        for i in string:
+            if i not in dic:
+                dic[i] = 1
+            else:
+                dic[i] += 1
+        return dic
 
 apple = Apples()
+print(apple.count_letters(''))
+
+
+
+
+
+
+
+
+#apples = Apples()
