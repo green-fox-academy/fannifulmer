@@ -7,7 +7,10 @@ class TestApples(unittest.TestCase):
         apples.get_apples()
         self.assertEqual(apples.get_apples(), 'redapple')
 
-    #def test_sum(self):
+    def test_sum(self, mylist = []):
+        apples = Apples()
+        self.assertEqual(apples.sum([1,2,3]), 6)
+
 
 
 
