@@ -30,7 +30,9 @@ class Apples():
         return dic
 
 apple = Apples()
-print(apple.count_letters(''))
+
+print(apple.count_letters('megszentsegtelenithetetlensegeskedeseitekert'))
+
 
 
 

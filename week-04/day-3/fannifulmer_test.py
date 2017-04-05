@@ -26,6 +26,10 @@ class TestApples(unittest.TestCase):
         apples = Apples()
         self.assertEqual(apples.anagram('alma', 'eger'), False)
 
+    def test_count_letter(self):
+        apples = Apples()
+        self.assertEqual(apples.count_letters('megszentsegtelenithetetlensegeskedeseitekert'), {'m': 1, 'e': 15, 'g': 3, 's': 5, 'z': 1, 'n': 3, 't': 7, 'l': 2, 'i': 2, 'h': 1, 'k': 2, 'd': 1, 'r': 1})
+
 
 
 
