@@ -6,13 +6,13 @@ class TestExtend(unittest.TestCase):
         pass
 
     def test_add_2_and_3_is_5(self):
-        self.assertEqual(extend.add(2, 3), 6)
+        self.assertEqual(extend.add(2, 3), 5)
 
     def test_add_4_and_1_is_5(self):
         self.assertEqual(extend.add(4, 1), 5)
 
     def test_max_of_three_first(self):
-        self.assertEqual(extend.max_of_three(5, 4, 3), 5)
+        self.assertEqual(extend.max_of_three(1, 4, 3), 5)
 
     def test_max_of_three_third(self):
         self.assertEqual(extend.max_of_three(3, 4, 5), 5)

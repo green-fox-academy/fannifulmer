@@ -1,6 +1,6 @@
 # Adds a and b, returns as result
 def add(a, b):
-    return a + b
+    return a +b
 
 # Returns the highest value from the three given params
 def max_of_three(a, b, c):
