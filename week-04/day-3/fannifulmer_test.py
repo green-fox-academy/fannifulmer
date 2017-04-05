@@ -11,6 +11,18 @@ class TestApples(unittest.TestCase):
         apples = Apples()
         self.assertEqual(apples.sum([1,2,3]), 6)
 
+    def test_sum_empty(self, mylist = []):
+        apples = Apples()
+        self.assertEqual(apples.sum([]), 0)
+
+    def test_sum_one_element(self, mylist = []):
+        apples = Apples()
+        self.assertEqual(apples.sum([3]), 3)
+
+
+
+
+
 
 
 
