@@ -29,9 +29,20 @@ class Apples():
                 dic[i] += 1
         return dic
 
+    def fibonacci(self, n):
+        if n == 0 or n == 1:
+            return n
+        else:
+            return self.fibonacci(n-1) + self.fibonacci(n-2)
+
 apple = Apples()
 
-print(apple.count_letters('megszentsegtelenithetetlensegeskedeseitekert'))
+
+'''Fibonacci
+
+Write a function that computes a member of the fibonacci sequence by a given index
+Create tests that covers all types of input (like in the previous workshop exercise)'''
+
 
 
 
