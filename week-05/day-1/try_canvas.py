@@ -10,6 +10,7 @@ class GameLogic():
         self.canvas.pack()
 
         self.draw_tiles()
+        self.hero_runner()
         self.root.mainloop()
         
     # def draw_tile(self):
@@ -21,13 +22,13 @@ class GameLogic():
     def draw_tiles(self):
         map = [
         [0,0,0,1,0,0,0,0,0,0],
+        [0,0,0,1,0,0,1,0,0,0],
+        [0,0,1,1,0,0,1,0,0,0],
+        [0,0,0,0,0,0,1,0,0,0],
+        [1,1,1,1,0,0,0,0,0,0],
         [0,0,0,1,0,0,0,0,0,0],
-        [0,0,0,1,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,1,0,0,1,1,0,0],
+        [0,0,0,1,0,0,1,1,0,0],
         [0,0,0,0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0,0,0,0]
         ]
@@ -39,6 +40,11 @@ class GameLogic():
                     self.canvas.create_image(row*72, cell*72, anchor=NW, image=self.floor_img)
                 else:
                     self.canvas.create_image(row*72, cell*72, anchor=NW, image=self.wall_img)
+                    
+    def hero_runner(self):
+        self.hero_img = PhotoImage(file="hero-down.png")
+        self.canvas.create_image(0, 0, anchor=NW, image=self.floor_img)
+            
                     
 game = GameLogic(720, 720)
 
