@@ -52,33 +52,30 @@ class Hero():
         self.x = 0
         self.y = 0
         self.hero_del = 0
-        self.hero_drawer()
+        self.hero_drawer(self.hero_down)
 
-    def hero_drawer(self):
+    def hero_drawer(self, hero_image):
         self.canvas.delete(self.hero_del)
-        self.hero_del = self.canvas.create_image(self.x, self.y, anchor = NW, image=self.hero_down)
+        self.hero_del = self.canvas.create_image(self.x, self.y, anchor = NW, image= hero_image)
         
     def on_key_press(self, e):
         self.e = e
         if self.e.keycode == 38:
             if self.y > 0:
                 self.y = self.y - 72
-            else:
-                self.y = self.y
+                self.hero_drawer(self.hero_up)
         elif self.e.keycode == 40:
             if self.y < 648:
-                self.y = self.y + 72
-            else:
-                self.y = self.y
+                self.y = self.y + 72  
+                self.hero_drawer(self.hero_down)          
         elif self.e.keycode == 39:
             if self.x < 648:
                 self.x = self.x + 72
-            else:
-                self.x = self.x
+                self.hero_drawer(self.hero_right)  
         elif self.e.keycode == 37:
             if self.x > 0:
                 self.x = self.x - 72
-        self.hero_drawer()    
+                self.hero_drawer(self.hero_left)  
         
             
                     
