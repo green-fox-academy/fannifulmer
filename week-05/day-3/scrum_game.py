@@ -51,35 +51,35 @@ class Hero():
         self.hero_up = PhotoImage(file="hero-up.png")
         self.x = 0
         self.y = 0
+        self.hero_del = 0
         self.hero_drawer()
 
     def hero_drawer(self):
-        self.canvas.create_image(self.x, self.y, anchor = NW, image=self.hero_down)
+        self.canvas.delete(self.hero_del)
+        self.hero_del = self.canvas.create_image(self.x, self.y, anchor = NW, image=self.hero_down)
         
     def on_key_press(self, e):
         self.e = e
         if self.e.keycode == 38:
-            if self.y >= 0:
+            if self.y > 0:
                 self.y = self.y - 72
-                self.hero_drawer()
             else:
                 self.y = self.y
         elif self.e.keycode == 40:
-            if self.y >= 0:
+            if self.y < 648:
                 self.y = self.y + 72
-                self.hero_drawer()
             else:
                 self.y = self.y
         elif self.e.keycode == 39:
-            if self.x >= 0:
+            if self.x < 648:
                 self.x = self.x + 72
-                self.hero_drawer()
             else:
                 self.x = self.x
         elif self.e.keycode == 37:
             if self.x > 0:
                 self.x = self.x - 72
-                self.hero_drawer()
+        self.hero_drawer()    
+        
             
                     
 game = Game()
