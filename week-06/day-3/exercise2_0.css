@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 200px;
+    width: 100%;
+}
+
+.yellow {
+    background: yellow;
+    flex-grow: 2;
+}
+
+.purple {
+    background: purple;
+    flex-grow: 1;
+    position: fixed;
+}
