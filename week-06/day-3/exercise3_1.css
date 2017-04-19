@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    height: 300px;
+    width: 100%;
+    background: gold;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+
+}
+
+.item {
+    background: purple;
+    height: 100px;
+    width: 100px;
+    list-style: none;
+    margin-right: 5px;
+    
+}

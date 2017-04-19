@@ -1,17 +1,15 @@
 .container {
     display: flex;
-    flex-direction: row-reverse;
     height: 200px;
-    width: 100%;
-}
-
-.yellow {
-    background: yellow;
+    width: 800px;
+    background: gold;
     flex-grow: 2;
+    justify-content: center;
+    align-items: center;
 }
 
 .purple {
     background: purple;
-    flex-grow: 1;
-    position: fixed;
+    height: 100px;
+    width: 100px;
 }
