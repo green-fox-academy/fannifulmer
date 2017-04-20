@@ -1,10 +1,10 @@
 # Create a method that decrypts texts/reversed_zen_lines.txt
-my_file = open("reversed-lines.txt", "r")
-my_file = my_file.readlines()
+def reverse_lines():
+    my_file = open ("reversed-lines.txt", "r")
+    new_file = my_file.readlines()
+    new_text = ""
+    for i in range(0, len(new_file)):
+        new_text += new_file[i][::-1]
+    return new_text
 
-def decrypt():
-    text = ""
-    for i in range(0, len(my_file)):
-        text += my_file[i][::-1]
-    return text
-print(decrypt())
+print(reverse_lines())

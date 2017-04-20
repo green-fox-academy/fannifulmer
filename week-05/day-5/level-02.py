@@ -9,7 +9,7 @@ canvas.pack()
 def centersquare_drawing (x, color):
     square = canvas.create_rectangle(150-(x/2), 150-(x/2), (x/2)+150, (x/2)+150, fill=color)
 
-color = ["red", "orange", "yellow", "green", "blue", "purple", "violet", "black"]
+color = ["blue", "green", "pink", "yellow", "tomato"]
 x = 300
 for i in range(len(color)):
     time.sleep(0.50)

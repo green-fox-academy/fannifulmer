@@ -15,7 +15,7 @@ class GameLogic():
         
     def position_wall_checker(self, x, y):
         if -1 < x < 10 and -1 < y < 10:
-            if self.map.map[y][x] == 0:
+            if self.map.map[y][x] == 0 or self.map.map[y][x] == 2:
                 return True
             
     def on_key_press(self, e):
@@ -47,21 +47,24 @@ class MapOfTheGame():
         self.map = [
         [0,0,0,0,0,0,0,0,0,0],
         [0,1,0,1,0,1,0,1,0,1],
-        [0,0,1,1,1,1,1,1,0,0],
-        [0,0,1,1,0,0,0,0,0,0],
-        [0,0,1,1,1,1,1,1,0,0],
-        [0,0,1,1,0,0,0,0,0,0],
-        [0,0,1,1,0,0,0,0,0,0],
-        [0,0,1,1,0,0,0,0,0,0],
-        [0,1,0,1,0,1,0,1,0,1],
+        [0,0,1,1,1,1,1,1,1,0],
+        [0,0,1,0,0,0,0,0,1,0],
+        [0,0,1,1,1,1,1,1,1,0],
+        [0,0,1,2,2,2,2,2,1,0],
+        [0,0,1,2,2,2,2,2,1,0],
+        [0,0,1,2,2,2,2,2,1,0],
+        [0,1,1,1,0,1,1,1,1,1],
         [0,0,0,0,0,0,0,0,0,0]
         ]
-        self.floor_img = PhotoImage(file="floor.png")
+        self.floor_img = PhotoImage(file="whitefloor.png")
         self.wall_img = PhotoImage(file="wall.png")
+        self.python_img = PhotoImage(file="pythonicon.png")
         for y in range(len(self.map)):
             for x in range(len(self.map[y])):
                 if self.map[y][x] == 0:
                     self.canvas.create_image(x*72, y*72, anchor=NW, image=self.floor_img)
+                elif self.map[y][x] == 2:
+                    self.canvas.create_image(x*72, y*72, anchor=NW, image=self.python_img)
                 else:
                     self.canvas.create_image(x*72, y*72, anchor=NW, image=self.wall_img)
                     
@@ -70,10 +73,10 @@ class Hero():
     def __init__(self, root, canvas):
         self.root = root
         self.canvas = canvas
-        self.hero_down = PhotoImage(file="hero-down.png")
-        self.hero_right = PhotoImage(file="hero-right.png")
-        self.hero_left = PhotoImage(file="hero-left.png")
-        self.hero_up = PhotoImage(file="hero-up.png")
+        self.hero_down = PhotoImage(file="fox.png")
+        self.hero_right = PhotoImage(file="fox.png")
+        self.hero_left = PhotoImage(file="fox.png")
+        self.hero_up = PhotoImage(file="fox.png")
         self.x = 0
         self.y = 0
         self.hero_del = 0

@@ -17,6 +17,6 @@ class Sharpie:
 
 
 pinksharpie = Sharpie('pink', 0.5)
-pinksharpie.use()
+#pinksharpie.use()
 
-print(pinksharpie.ink_amount)
+print(pinksharpie.color)

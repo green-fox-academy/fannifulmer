@@ -73,7 +73,7 @@ class Hero():
         self.hero_down = PhotoImage(file="hero-down.png")
         self.hero_right = PhotoImage(file="hero-right.png")
         self.hero_left = PhotoImage(file="hero-left.png")
-        self.hero_up = PhotoImage(file="hero-up.png")
+        self.hero_up = PhotoImage(file="fox.png")
         self.x = 0
         self.y = 0
         self.hero_del = 0

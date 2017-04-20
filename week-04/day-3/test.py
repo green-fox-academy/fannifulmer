@@ -24,16 +24,13 @@ class TestExtend(unittest.TestCase):
         self.assertEqual(extend.median([1,2,3,4,5]), 3)
 
     def test_is_vovel_a(self):
-        self.assertTrue(extend.is_vovel('a'))
-
-    def test_is_vovel_u(self):
-        self.assertTrue(extend.is_vovel('u'))
+        self.assertEqual(extend.is_vovel('a'), True)
+    
+    def test_is_vovel_r(self):
+        self.assertEqual(extend.is_vovel('r'), False)
 
     def test_translate_bemutatkozik(self):
-        self.assertEqual(extend.translate('bemutatkozik'), 'bevemuvutavatkovozivik')
-
-    def test_translate_kolbice(self):
-        self.assertEqual(extend.translate('kolbice'), 'kovolbiviceve')
+        self.assertEqual(extend.translate('hungarian'), 'huvungavariviavan')
 
 if __name__ == '__main__':
     unittest.main()

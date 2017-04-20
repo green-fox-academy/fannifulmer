@@ -14,46 +14,45 @@ when watering it the tree can only absorb the 40% of the water
 eg. watering with 10 the tree's amount of water should only increase with 4'''
 
 class Garden():
-    flowers = []
-    trees = []
+    flowers_garden = []
+    trees_garden = []
     
     def needs_water(self):
-        plant_needs_water = 0
+        plants_needs_water = 0
         
-        for f in garden.flowers:
+        for f in self.flowers_garden:
             if f[1] < 5:
                 plants_needs_water += 1
-        return plants_needs_water
+            return plants_needs_water
+        print("The", self.flowers_garden[0], "flower needs water")
         
-        # for t in trees:
-        #     if t[1] < 10:
-        #         plants_needs_water += 1
-        # return plants_needs_water
-                
     def watering(self, water_amount):
         self.water_amount = water_amount
-        water_for_one_plant = water_amount / self.needs_water()
-        for flower in flowers:
+        water_for_one_plant = water_amount/self.needs_water()
+        for flower in self.flowers_garden:
             if flower[1] < 5:
                 flower[1] += water_for_one_plant*0.75
-            print("The", self.color, self.type, "needs water")
+        print("The", self.flowers_garden[0], "needs water")
+            
         
-        
+    
 class Flower(Garden):
-    def __init__(self, color, water_level):
+    def __init__(self, color, water):
         self.color = color
-        self.water_level = water_level
-        self.flowers.append([self.color, self.water_level])
-        
-class Tree(Garden):
-    def __init__(self, color, water_level):
-        self.color = color
-        self.water_level = water_level
-        
+        self.water = water
+        self.type = type
+        self.flowers_garden.append([self.color, self.water])
+
+# class Tree(Garden):
+#     def __init__(self, color, water):
+#         pass
+    
+    
 garden = Garden()
 rose = Flower('red', 0)
-garden.watering(40)
-print(garden.flowers)
-        
+blue = Flower('blue', 0)
+garden.needs_water()
+garden.watering(70)
 
-    
+print(garden.flowers_garden)
+

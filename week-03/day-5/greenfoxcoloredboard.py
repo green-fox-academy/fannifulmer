@@ -10,9 +10,9 @@ def making_a_grid(x, y, w):
         for col in range(8):
             time.sleep(0.09)
             if (col + row) % 2 == 0:
-                canvas.create_rectangle(x, y, x+w, y+w, fill='#3cb879',outline='white', width = 1)
+                canvas.create_rectangle(x, y, x+w, y+w, fill='black', width = 0)
             else:
-                canvas.create_rectangle(x, y, x+w, y+w, fill='#017335', width = 1)
+                canvas.create_rectangle(x, y, x+w, y+w, fill='white', width = 0)
             canvas.update()
             x = x + w
         y = y + w

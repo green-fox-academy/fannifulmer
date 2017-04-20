@@ -36,6 +36,7 @@ class Apples():
             return self.fibonacci(n-1) + self.fibonacci(n-2)
 
 apple = Apples()
+print(apple.count_letters("alma"))
 
 
 '''Fibonacci

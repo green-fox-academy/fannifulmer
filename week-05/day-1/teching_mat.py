@@ -6,12 +6,8 @@ class Box(object):
         self.testBoxY = 300
 
     def draw(self, canvas):
-        self.new_img = PhotoImage(file="floor.png")
-        for row in range(10):
-            for col in range(10):
-                canvas.create_image(row*60, col*60, anchor=NW, image=self.new_img)
-        # canvas.create_rectangle(0, 0, 600, 600, fill='white')
-        # canvas.create_rectangle(self.testBoxX, self.testBoxY, self.testBoxX+100, self.testBoxY+100, fill='lime green')
+        canvas.create_rectangle(0, 0, 600, 600, fill='white')
+        canvas.create_rectangle(self.testBoxX, self.testBoxY, self.testBoxX+100, self.testBoxY+100, fill='lime green')
         
 
 # Create the tk environment as usual

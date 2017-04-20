@@ -3,9 +3,12 @@
 
 
 def factorio(number):
-        start = 1
-        for n in range(1, number+1):
-            start *= n
-        return start
+    start = 1
+    for i in range(1, number+1):
+        start *= i 
+    return start
 
-print(factorio(6))
+print(factorio(3))
+        
+    
+    
