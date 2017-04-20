@@ -13,7 +13,6 @@ header {
     justify-content: flex-start;
     width: 100%;
     border-bottom: 10px solid white;
-    
 }
 
 .container{
@@ -26,7 +25,6 @@ header {
     background: cyan;
     list-style: none;
     height: 40px;
-    flex: 1 1 1;
     margin-right: 15px;
 }
 
@@ -71,5 +69,7 @@ aside {
 
 footer {
     background: grey;
-    width: 100px;
+    height: 50px;
+    width: 100%;
+    border-top: 10px solid white;
 }
