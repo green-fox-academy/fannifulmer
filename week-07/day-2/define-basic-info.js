@@ -6,12 +6,12 @@
 // Your height in meters as a float
 // Whether you are married or not as a boolean
 
-var name = "Fanni"
-var age = 24
-var height = 1.66
-var married = false
+var name = "Fanni";
+var age = 24;
+var height = 1.66;
+var married = false;
 
-console.log(name)
-console.log(age)
-console.log(height)
-console.log(married)
+console.log(name);
+console.log(age);
+console.log(height);
+console.log(married);
