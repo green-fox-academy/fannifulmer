@@ -9,11 +9,11 @@ function doubling (ak) {
     console.log(ak*2);
 }
 
-doubling(ak)
+doubling(ak);
 
 
 function doubling (ak) {
     return ak * 2;
 }
 
-console.log(doubling(ak))
+console.log(doubling(ak));
