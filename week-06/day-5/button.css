@@ -1,0 +1,26 @@
+.wrapper {
+    display: flex;
+}
+
+.button {
+    width: 500px;
+    height: 100px;
+    margin: 10px;
+    text-shadow: 1px -2px 2px #000;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 48px;
+    font-family: 'Raleway';
+    color: green;
+}
+
+.one {
+    background: #fafafa;
+    background: linear-gradient(to top, #bf0918 0%, #ef3434 100%);
+    border: 2px solid #7c0000;
+    box-shadow: 0 0 5px #7c0000;    
+}
+
+.one:hover {
+    background: linear-gradient(to bottom, #bf0918 0%, #ef3434 100%);
+}

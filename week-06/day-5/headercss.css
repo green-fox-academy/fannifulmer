@@ -1,0 +1,100 @@
+header {
+    display: flex;
+    background: url(177026__desert-mountain_p.jpg) no-repeat;
+    height: 650px;
+    width: 100%;
+    background-size: cover;
+}
+
+.title {
+    font-family: Arial;
+    padding-top: 90px;
+    font-size: 25px;
+}
+
+ul {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: black;
+    opacity: 0.5;
+    height: 50px;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 140px;
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    color: white;
+}
+
+li:hover {
+    background: green;
+}
+
+.info {
+    display: flex;
+    height: 250px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.work {
+    background: #fff;
+}
+
+.study {
+    background: #829ee5;
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 200px;
+    width: 200px;
+}
+
+.one {
+    background: url(alma.png) no-repeat;
+    background-size: cover;
+}
+
+.two {
+    background: url(gyerekbir.jpg) no-repeat;
+    background-size: cover;
+}
+
+.three {
+    background: url(elte.jpg) no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+}
+
+.box:hover {
+    visibility: visible;
+    background: blue;
+}
+
+.hoverer {
+    padding-top: 50px;
+    visibility: hidden;
+}
+
+.box:hover .hoverer {
+    visibility: visible;
+    opacity: 1;
+}

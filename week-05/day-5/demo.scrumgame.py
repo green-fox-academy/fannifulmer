@@ -15,7 +15,7 @@ class GameLogic():
         
     def position_wall_checker(self, x, y):
         if -1 < x < 10 and -1 < y < 10:
-            if self.map.map[y][x] == 0: #or self.map.map[y][x] == 2:
+            if self.map.map[y][x] == 0 or self.map.map[y][x] == 2:
                 return True
             
     def on_key_press(self, e):

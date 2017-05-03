@@ -1,4 +1,5 @@
-x = int(input("How many hours do you spent per day with codeing? "))
+#x = int(input("How many hours do you spent per day with codeing? "))
+x = 6
 print("Hours spent in codeing per semester:")
 print(x*17*5)
 weekyworkh = 52
