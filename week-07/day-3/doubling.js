@@ -6,13 +6,6 @@
 var ak = 123;
 
 function doubling (ak) {
-    console.log(ak*2);
-}
-
-doubling(ak);
-
-
-function doubling (ak) {
     return ak * 2;
 }
 

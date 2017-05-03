@@ -8,7 +8,7 @@
 var al = 'Greenfox';
 
 function greet(name='sweetheart') {
-    console.log("Greetings, dear", name)
+    return "Greetings, dear " + name;
 }
 
-greet(al)
+console.log(greet(al));
