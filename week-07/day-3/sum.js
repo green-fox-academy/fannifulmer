@@ -10,4 +10,4 @@ function sum(numbers) {
     return summed;
 }
 
-console.log(sum(1));
+console.log(sum(5));
