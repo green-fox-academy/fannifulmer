@@ -9,7 +9,9 @@ astList.appendChild(fox);
 astList.appendChild(fox2);
 
 var headCont = document.querySelector('.container');
-headCont.innerHTML = 'I can add elements to the DOM!';
+var head = document.createElement('h1');
+head.textContent = 'I can add elements to the DOM!';
+headCont.appendChild(head);
 
 var headContImg = document.createElement('img');
 headCont.appendChild(headContImg);
