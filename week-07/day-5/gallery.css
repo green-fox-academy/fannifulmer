@@ -1,0 +1,46 @@
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    font-size: 24px;
+}
+
+ul {
+    display: flex;
+    background: white;
+    height: 50px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    color: black;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+.images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+img {
+    padding-right: 15px;
+    padding-bottom: 15px;
+    width: 30%;
+    
+}
