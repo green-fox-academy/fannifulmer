@@ -1,12 +1,16 @@
 'use strict'
 
-var clickPhoto = document.querySelector('img');
+var photoCollection = document.querySelectorAll('img');
 var body = document.querySelector('body');
+var images = document.querySelector('.images');
+var button 
 
 function onClick() {
     var zoomScreen = document.createElement('div');
-    // var button = document.createElement('button');
-    // zoomScreen.appendChild('button');
+    zoomScreen.className += "close";
+    button = document.createElement('button');
+    button.style.backgroundColor = 'white';
+    button.innerHTML = "X";
     console.log(zoomScreen);
     zoomScreen.style.width = '100%';
     zoomScreen.style.height = '100%';
@@ -16,9 +20,17 @@ function onClick() {
     zoomScreen.style.backgroundColor = 'white';
     zoomScreen.zIndex = 10;
     body.appendChild(zoomScreen);
-    
-    // newphoto.setAttribute('src', 'clickPhoto.getAttribute("src")');
-    // newphoto.style.display = 'flex';
+    zoomScreen.appendChild(button);
+    button.addEventListener('click', xClick);
 }
 
-clickPhoto.addEventListener('click', onClick);
+for (var i = 0; i < photoCollection.length; i++) {
+    photoCollection[i].addEventListener('click', onClick);
+}
+
+function xClick() {
+    var zoomScreen = document.querySelector('.close');
+    console.log(zoomScreen);
+    body.removeChild(zoomScreen);
+}
+
