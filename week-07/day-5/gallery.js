@@ -10,6 +10,9 @@ function onClick() {
     zoomScreen.className += "close";
     button = document.createElement('button');
     button.style.backgroundColor = 'white';
+    button.style.position = "fixed";
+    button.style.right = 0;
+    button.style.top = 0;
     button.innerHTML = "X";
     console.log(zoomScreen);
     zoomScreen.style.width = '100%';
