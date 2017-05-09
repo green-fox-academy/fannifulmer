@@ -45,8 +45,12 @@ function farm() {
         }
     }, 
     
-    function slaughter(){
-        
+    this.slaughter = function(){
+        this.animals.sort(function(a, b) {
+        return a.hunger -b.hunger;
+    })
+    this.animals.shift();
+    console.log(this.animals);    
     }
 }
 
@@ -54,5 +58,9 @@ var farmAnimal = new farm();
 farmAnimal.breed();
 farmAnimal.breed();
 farmAnimal.breed();
-console.log(farmAnimal.slots);
-console.log(farmAnimal.animals);
+// console.log(farmAnimal.slots);
+// console.log(farmAnimal.animals);
+farmAnimal.animals[2].eat();
+farmAnimal.animals[2].eat();
+farmAnimal.animals[2].eat();
+farmAnimal.slaughter();
