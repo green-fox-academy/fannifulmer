@@ -5,16 +5,15 @@
 var volvo = {
   type: "Volvo",
   fuel: 23,
-  consumption: 0.06
+  consumption: 0.06,
   kms: 43000,
   ride: function (km) {
     this.kms += km;
     this.fuel -= km * this.consumption; 
+    return this.fuel
   }
 };
-
-
-
+console.log(volvo.ride(42));
 
 
 // 2nd
@@ -24,7 +23,7 @@ var volvo = {
 var ferrari = {
   type: "Ferrari",
   fuel: 0,
-  consumption: 0.12
+  consumption: 0.12,
   kms: 9000,
   ride: function (km) {
     this.kms += km;
@@ -34,10 +33,11 @@ var ferrari = {
 
 function refuel(liters) {
   this.fuel += liters
+  return this.fuel;
 }
 
-
-
+var refueler = refuel.bind(ferrari);  
+console.log(refueler(52));
 
 
 // 3rd
@@ -50,8 +50,16 @@ function refuel(liters) {
 // and increments kms with it, then drains the battery based on the consumpltion 
 
 
-
-
+var tesla = {
+    type: "Tesla",
+    battery: 20,
+    kms: 4000,
+    consunption: 0.10,
+    ride: function(km) {
+        this.kms += km;
+        this.battery -= km * this.consunption;
+    }
+};
 
 tesla.ride(36);
 console.log(tesla.kms);
