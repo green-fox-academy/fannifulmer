@@ -3,19 +3,22 @@
 // Bela bacsi has free time at 8 o'clock, Bujaki at 9 o'clock, Vilma at 10 o'clock.
 // The program shoul print the schedule of the teachers.
 
-var isIll = true;
+const isIll = true;
 var deputy = 'Jutka'
 
 function getDeputy(hour) {
   while (isIll) {
     if (hour === 8) {
         deputy = 'Bela bacsi';
+        let isIll = false;
     }
     else if (hour === 9) {
         deputy = 'Bujaki';
+        let isIll = false;
     }
     else if (hour === 10) {
         deputy = 'Vilma';
+        let isIll = false;
     }
     return deputy;
   }
