@@ -21,7 +21,7 @@ var car = {
         this.petrolLevel += amount;
         return amount;
     } else {
-        this.petrolLevel += emptyLevel;
+        this.petrolLevel = emptyLevel;
         return emptyLevel;
     }
     }
@@ -33,7 +33,7 @@ var station = {
     provide: function (car) {
         this.petrolStorage -= car.refill(this.petrolStorage);
     }
-};
+}
 
 console.log(car.petrolLevel);
 
