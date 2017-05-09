@@ -16,18 +16,43 @@
 
 function animal(hunger, thirst) {
     this.hunger = 50,
-    this.thirst = 50
+    this.thirst = 50,
+    
+    this.eat = function() {
+        this.hunger--;
+    },
+    
+    this.drink = function() {
+        this.thirst--;
+    },
+    
+    this.play = function() {
+        this.thirst++;
+        this.thirst++;
+    }
+};
+
+
+function farm() {
+    this.animals = [],
+    this.slots = 3,
+    
+    this.breed = function() {
+        if (this.slots > 0 && this.slots < 5) {
+        var newAnimal = new animal(); 
+        this.animals.push(newAnimal);
+        this.slots--;
+        }
+    }, 
+    
+    function slaughter(){
+        
+    }
 }
 
-function eat() {
-    --this.hunger;
-}
-
-function drink() {
-    --this.thirst;
-}
-
-function play() {
-    ++this.thirst;
-    ++this.hunger;
-}
+var farmAnimal = new farm();
+farmAnimal.breed();
+farmAnimal.breed();
+farmAnimal.breed();
+console.log(farmAnimal.slots);
+console.log(farmAnimal.animals);
