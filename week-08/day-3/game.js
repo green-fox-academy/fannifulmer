@@ -11,13 +11,12 @@
 
 
 var candies = document.querySelector('.candies');
-console.log(candies);
 var candyButton = document.querySelector('.create-candies');
 var lollyButton = document.querySelector('.buy-lollypops')
 var lollypop = document.querySelector('.lollypops')
+var freeCandy = document.querySelector('.speed')
 candyButton.addEventListener('click', candyCreate);
 lollyButton.addEventListener('click', lollypopCreate);
-
 
 function candyCreate() {
     candies.innerHTML++
@@ -27,5 +26,21 @@ function lollypopCreate() {
     if (candies.innerHTML >= 100){
     lollypop.innerHTML += '🍭';
     candies.innerHTML -= 100;
+    console.log(lollypop.innerHTML.length/2);
+    lollypopChecker();
 }
 }
+
+function lollypopChecker() {
+    if (lollypop.innerHTML.length/2 === 10){
+        candyGenerator()    
+    }
+}
+function candyGenerator() {
+    var interval = window.setInterval(candyAdder, 1000);
+}
+
+function candyAdder() {
+    candies.innerHTML++
+}
+
