@@ -7,3 +7,9 @@ function appleTime() {
 }
 
 setTimeout(appleTime, 3000);
+
+var pearTime = function() {
+    console.log('pear');
+}
+
+setTimeout(pearTime, 3000);
