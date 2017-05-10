@@ -8,8 +8,8 @@ function appleTime() {
 
 setTimeout(appleTime, 3000);
 
-var pearTime = function() {
-    console.log('pear');
+var appleTime2 = function() {
+    console.log('apple');
 }
 
-setTimeout(pearTime, 3000);
+setTimeout(appleTime2, 3000);
