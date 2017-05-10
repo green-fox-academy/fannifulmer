@@ -4,9 +4,6 @@
 // it should call the callback immediately with the last even number on the array
 
 
-function printNumber(num) {
-  console.log(num);
-}
 
 function selectLastEvenNumber(array, callback){
     var lastNumber = array.filter(function(number){
@@ -15,8 +12,11 @@ function selectLastEvenNumber(array, callback){
         }
     })
     var last = lastNumber.slice(-1);
-    return last
+    callback(last);
 }
 
+function printNumber(num) {
+    console.log(num);
+}
 
-console.log(selectLastEvenNumber([2, 5, 7, 8, 9, 11], printNumber)); // should print 8
+selectLastEvenNumber([2, 5, 7, 8, 9, 11], printNumber); // should print 8
