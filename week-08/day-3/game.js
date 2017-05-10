@@ -12,11 +12,14 @@
 
 var candies = document.querySelector('.candies');
 var candyButton = document.querySelector('.create-candies');
-var lollyButton = document.querySelector('.buy-lollypops')
-var lollypop = document.querySelector('.lollypops')
-var freeCandy = document.querySelector('.speed')
+var lollyButton = document.querySelector('.buy-lollypops');
+var lollypop = document.querySelector('.lollypops');
+var freeCandy = document.querySelector('.speed');
+var rain = document.querySelector('.candy-machine');
+var time = 1000;
 candyButton.addEventListener('click', candyCreate);
 lollyButton.addEventListener('click', lollypopCreate);
+rain.addEventListener('click', candyRain);
 
 function candyCreate() {
     candies.innerHTML++
@@ -26,6 +29,7 @@ function lollypopCreate() {
     if (candies.innerHTML >= 100){
     lollypop.innerHTML += '🍭';
     candies.innerHTML -= 100;
+    console.log(time);
     console.log(lollypop.innerHTML.length/2);
     lollypopChecker();
 }
@@ -36,11 +40,22 @@ function lollypopChecker() {
         candyGenerator()    
     }
 }
-function candyGenerator() {
-    var interval = window.setInterval(candyAdder, 1000);
+function candyGenerator(time) {
+    var interval = window.setInterval(candyAdder, 1 * time);
+    candiesPerTime();
 }
 
 function candyAdder() {
-    candies.innerHTML++
+    candies.innerHTML++;
 }
 
+function candiesPerTime() {
+    freeCandy.innerHTML = 1;
+}
+
+function candyRain() {
+    time = time / 10;
+    console.log(time);
+    return time;
+    candyGenerator(time);
+}
