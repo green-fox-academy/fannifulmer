@@ -29,8 +29,7 @@ function lollypopCreate() {
     if (candies.innerHTML >= 100){
     lollypop.innerHTML += '🍭';
     candies.innerHTML -= 100;
-    console.log(time);
-    console.log(lollypop.innerHTML.length/2);
+    console.log(lollypop.innerHTML.length);
     lollypopChecker();
 }
 }
@@ -40,7 +39,7 @@ function lollypopChecker() {
         candyGenerator()    
     }
 }
-function candyGenerator(time) {
+function candyGenerator() {
     var interval = window.setInterval(candyAdder, 1 * time);
     candiesPerTime();
 }
