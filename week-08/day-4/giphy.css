@@ -1,7 +1,12 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
 body {
     display: flex;
-    justify-content: center;
     background: grey;
+    justify-content: center;
 }
 
 .wrapper {
@@ -9,13 +14,12 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    width: 900px;
+    background: #ede6e6;
 }
 
 img {
-    padding: 5px;
-}
-
-h1 {
-    color: white;
+    height: 30vh;
+    width: 30vw;
+    padding: 15px;
 }
