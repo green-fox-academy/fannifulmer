@@ -17,13 +17,18 @@ var headlinesCreater = function(headerData) {
         let listheadlines = document.createElement('li')
         let headlines = document.createElement('a');
         let snippet = document.createElement('p');
+        let publicationDate = document.createElement('p');
         snippet.classList.add("snippet");
+        
         headlines.innerHTML = headerData[i].headline.main;
         snippet.innerHTML = headerData[i].snippet;
-        headlines.setAttribute('href', headerData[i].headline.main);
+        publicationDate.innerHTML = headerData[i].pub_date;
+        headlines.setAttribute('href', headerData[i].web_url);
+        
         wrapper.appendChild(listheadlines);
         listheadlines.appendChild(headlines);
         listheadlines.appendChild(snippet);
+        listheadlines.appendChild(publicationDate);
         console.log(headlines);
     }
 }

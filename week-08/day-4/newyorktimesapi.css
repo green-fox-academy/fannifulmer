@@ -1,0 +1,28 @@
+ul {
+    margin: 5px;
+}
+
+li {
+    margin: 10px;
+}
+
+p {
+    font-family: 'TimesNewRoman';
+}
+
+a {
+    font-size: 1,5rem;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+h1 {
+    font-family: 'Bevan';
+    align-self: center;
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+    margin: 5px;
+    margin-bottom: 20px;
+}
