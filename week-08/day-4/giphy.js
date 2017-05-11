@@ -13,18 +13,12 @@ rainRequest.onreadystatechange = function () {
 rainRequest.send();
 
 var imageAdder = function(rainImages) {
-    for (let j = 0; j <= 16; j++){
-        var pictures = document.createElement('img');
-        pictures.setAttribute('src', rainImages[j].images.original_still.url);
-        pictures.addEventListener('click', onSwitchGif);
+    for (let i = 0; i < 16; i++){
+        let pictures = document.createElement('img');
+        pictures.setAttribute('src', rainImages[i].images.original_still.url);
+        pictures.addEventListener('click', function () {
+            pictures.setAttribute('src', rainImages[i].images.original.url);
+        })
         pictureContainer.appendChild(pictures);
     }
-}
-
-var onSwitchGif = function(gifVideos){
-    for (let k = 0; k <= 16; k++){
-        imageContainer[k].setAttribute('src', gifVideos[k].images.downsized_medium
-        .url);
-    }
-
 }
