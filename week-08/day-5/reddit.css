@@ -1,0 +1,89 @@
+.submittion, .headline {
+    display: block;
+    font-weight: 500;
+    font-family: Arial; 
+}
+
+.headline {
+    font-size: 20px;
+    color: blue;
+    padding-bottom: 5px;
+    text-decoration: none;
+}
+
+.submittion {
+    color: black;
+    font-size: 12px;
+}
+
+.counter {
+    display: block;
+    color: #c6c6ca;
+    font-weight: 600;
+}
+
+
+article {
+    padding-left: 60px;
+    padding-top: 10px;
+    position: relative;
+    margin-left: 10px;
+}
+
+.span, img, .counter {
+    color: #c6c6ca;
+    position: absolute;
+}
+
+.span {
+    top: 45%;
+    left: 0;
+}
+
+.counter {
+    top: 45%;
+    left: 19px;
+    margin-left: 10px;
+}
+
+.upvote {
+    top: 18%;
+    left: 16px;
+    margin-left: 10px;
+}
+
+.downvote {
+    left: 16px;
+    bottom: 5%;
+    margin-left: 10px;
+}
+
+.modify, .remove {
+    display: inline-block;
+    color: black;
+    font-weight: bold;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+ul {
+    display: flex;
+    background: black;
+    height: 15px;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+}
+
+li a {
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+}
