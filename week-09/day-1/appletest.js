@@ -3,6 +3,7 @@
 var test = require('tape');
 var fruits = require('./apple.js');
 var count = require('./sum.js');
+var anagram = require('./anagram.js')
 
 test('print apple', function (t) {
   var actual = fruits.getApple('alma');
@@ -41,10 +42,20 @@ test('sum element', function (t) {
     t.end();
 });
 
-// test('sum element', function (t) {
-//     var sum2 = new count();
-//     t.equal(sum2.sumAdder(['hello']), );
-//     t.end();
-// });
+test('sum element', function (t) {
+    var sum2 = new count();
+    t.equal(sum2.sumAdder(['hello', 1]), '0hello1');
+    t.end();
+});
+
+test('anagram checker', function(t){
+    t.equal(anagram('hello', 'olleh'), true);
+    t.end();
+})
+
+test('anagram checker', function(t){
+    t.equal(anagram('melo', 'kajak'), false);
+    t.end();
+})
 
 
