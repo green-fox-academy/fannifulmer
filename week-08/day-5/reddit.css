@@ -87,3 +87,34 @@ li a {
     color: white;
     text-decoration: none;
 }
+
+.url_div {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px;
+    padding: 10px;
+    width: 350px;
+    flex-direction: column;
+    background: #cee3f8;
+}
+
+.blue_line {
+    width: 370px;
+    height: 4px;
+    background: blue;
+    margin: 10px;
+}
+
+.url_input, .title_input {
+    width: 100%;
+}
+
+.submit_button {
+    margin: 10px;
+}
+
+.titleof_page {
+    margin: 10px;
+    font-size: 20px;
+}
+

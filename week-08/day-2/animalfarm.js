@@ -47,7 +47,7 @@ function farm() {
     
     this.slaughter = function(){
         this.animals.sort(function(a, b) {
-        return a.hunger -b.hunger;
+        return a.hunger - b.hunger;
     })
     this.animals.shift();
     console.log(this.animals);    

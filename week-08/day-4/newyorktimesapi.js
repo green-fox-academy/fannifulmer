@@ -15,21 +15,23 @@ newyorkTimes.send();
 var headlinesCreater = function(headerData) {
     for (let i = 0; i < 9; i++){
         let listheadlines = document.createElement('li')
+        
         let headlines = document.createElement('a');
+        headlines.innerHTML = headerData[i].headline.main;
+        headlines.setAttribute('href', headerData[i].web_url);
+        
         let snippet = document.createElement('p');
-        let publicationDate = document.createElement('p');
+        snippet.innerHTML = headerData[i].snippet;
         snippet.classList.add("snippet");
         
-        headlines.innerHTML = headerData[i].headline.main;
-        snippet.innerHTML = headerData[i].snippet;
+        let publicationDate = document.createElement('p');
         publicationDate.innerHTML = headerData[i].pub_date;
-        headlines.setAttribute('href', headerData[i].web_url);
+        
         
         wrapper.appendChild(listheadlines);
         listheadlines.appendChild(headlines);
         listheadlines.appendChild(snippet);
         listheadlines.appendChild(publicationDate);
-        console.log(headlines);
     }
 }
 
