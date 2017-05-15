@@ -16,10 +16,25 @@
 // Fix your code if needed
 
 
+// var counter = {
+//     sum: 0,
+//     
+//     sumAdder: function(numberArray){
+//         for (var i = 0; i < numberArray.length; i++){
+//             this.sum += numberArray[i];
+//         }
+//         return this.sum;
+//     }
+// }
+// 
+// // counter.sumAdder([1, 2]);
+
+
+
 var counter = function() {
     this.sum = 0;
     
-    this.sumadder = function(numberArray){
+    this.sumAdder = function(numberArray){
         for (var i = 0; i < numberArray.length; i++){
             this.sum += numberArray[i];
         }
@@ -30,6 +45,5 @@ var counter = function() {
 module.exports = counter;
 
 var obj = new counter();
-console.log(obj.sumadder([2, 5, 9]));
+// console.log(obj.sumAdder([2, 5, 9]));
 
-// console.log(obj.sum);
