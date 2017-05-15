@@ -1,3 +1,4 @@
+'use strict';
 // Create an object, with one method (eg. getApple()) that returns a string (eg. 'apple')
 // Create a test for that:
 // Create a test class
@@ -11,11 +12,14 @@
 // Run the test
 // Fix the returned value to make the test succeeding again
 
-function getApple() {
-    return 'apple';
+var fruit = {
+    getApple: function(string){
+        return string;
+    }
 }
 
-console.log(getApple());
+module.exports = fruit;
+// console.log(fruit.getApple('pear'));
 
-module.exports = getApple;
+
 
