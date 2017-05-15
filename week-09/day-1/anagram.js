@@ -7,8 +7,8 @@
 
 var anagramReader = function(string1, string2){
 
-    var newstring1 = string1.split('').sort().join('');
-    var newstring2 = string2.split('').sort().join('');
+    var newstring1 = string1.toLowerCase().split('').sort().join('');
+    var newstring2 = string2.toLowerCase().split('').sort().join('');
 
     if (newstring1 === newstring2) {
         return true
@@ -18,5 +18,4 @@ var anagramReader = function(string1, string2){
 }
 
 module.exports = anagramReader;
-
 

@@ -58,4 +58,9 @@ test('anagram checker', function(t){
     t.end();
 })
 
+test('anagram checker', function(t){
+    t.equal(anagram('Tokyo', 'Kyoto'), true);
+    t.end();
+})
+
 
