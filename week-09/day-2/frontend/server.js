@@ -22,21 +22,6 @@ app.get('/doubling', function(req, res){
     }
 });
 
-
-// app.get('/greeter/:name/:title', function(req, res){
-//     var name = req.params.name;
-//     var title = req.params.title;
-//     if (req.query === {} || req.params.name === undefined){
-//         res.send({
-//             error: "Please provide a name!"
-//         })
-//     } else {
-//         res.send({
-//             name: req.query.name,
-//             title: req.query.title
-//         });
-//     }
-// });
 app.get('/greeter', function(req, res){
     if (req.query.name === undefined){
         res.send({
@@ -52,5 +37,12 @@ app.get('/greeter', function(req, res){
         });
     }
 });
+
+app.get('/appenda/:appendable', function(req, res){
+        res.send({
+            appended: req.params.appendable + 'a'
+        })
+});
+
 
 app.listen(8080);
