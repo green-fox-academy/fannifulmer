@@ -2,7 +2,6 @@
 
 var body = document.querySelector('body');
 var createNewpost = document.querySelector('.creatPost');
-var mainMenu = document.querySelector('.main');
 
 var getReddit = function(callback) {
     var reddit =  new XMLHttpRequest();
@@ -13,7 +12,6 @@ var getReddit = function(callback) {
             var resp = JSON.parse(reddit.response);
             console.log(resp);
             callback(resp.posts);
-            
         }
     }
     reddit.send();
@@ -24,8 +22,6 @@ var gettingData = function(baseData){
         if (baseData[i].owner === null) {
             baseData[i].owner = 'anonymus';
         }
-        mainMenu.addEventListener('click', gettingData);
-        createNewpost.addEventListener('click', postCreate);
         createPost(baseData[i], i);
     }
 }

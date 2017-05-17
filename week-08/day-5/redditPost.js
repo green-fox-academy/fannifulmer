@@ -2,6 +2,7 @@
 
 var body = document.querySelector('body');
 var createNewpost = document.querySelector('.creatPost');
+var mainMenu = document.querySelector('.main');
 
 var postCreate = function() {
     let coverDiv = document.createElement('div');
@@ -13,7 +14,6 @@ var postCreate = function() {
     
     let blueLine = document.createElement('div');
     blueLine.classList.add('blue_line');
-    
     
     let urlDiv = document.createElement('div');
     urlDiv.classList.add('url_div');
@@ -52,7 +52,6 @@ var postCreate = function() {
     urlDiv.appendChild(options);
     urlDiv.appendChild(optionsInput);
     body.appendChild(submitButton);
-    // submitButton.appendChild(submitAnchor);
     submitButton.addEventListener('click', function(){
         postReddit(titleInput, urlInput, getReddit);
     });
@@ -78,3 +77,14 @@ var postReddit = function(titleInput, urlInput, getReddit) {
     redditPost.send(JSON.stringify(newInput));
 }
 
+createNewpost.addEventListener('click', function(){
+    postCreate();
+    let articles = document.querySelectorAll('article');
+    for (let i = 0; i < articles.length; i++){
+        articles[i].style.display = 'none';
+    }
+})
+
+mainMenu.addEventListener('click', function(){
+    createPost();
+})
