@@ -1,49 +1,50 @@
 'use strict';
-console.log(getReddit);
+
 var body = document.querySelector('body');
-var newpost = document.querySelector('.newpost');
+var createNewpost = document.querySelector('.creatPost');
 
 var postCreate = function() {
-    var titleofPage = document.createElement('h1');
+    let coverDiv = document.createElement('div');
+    coverDiv.classList.add('cover_div')
+    
+    let titleofPage = document.createElement('h1');
     titleofPage.innerHTML = 'submit to the page';
     titleofPage.classList.add('titleof_page');
     
-    var blueLine = document.createElement('div');
+    let blueLine = document.createElement('div');
     blueLine.classList.add('blue_line');
     
     
-    var urlDiv = document.createElement('div');
+    let urlDiv = document.createElement('div');
     urlDiv.classList.add('url_div');
     
-    var urlLabel = document.createElement('label');
+    let urlLabel = document.createElement('label');
     urlLabel.innerHTML = 'url';
     
-    var urlInput = document.createElement('input');
+    let urlInput = document.createElement('input');
     urlInput.classList.add('url_input');
     
-    var title = document.createElement('label');
+    let title = document.createElement('label');
     title.innerHTML = 'title';
-    var titleInput = document.createElement('textarea');
+    let titleInput = document.createElement('textarea');
     titleInput.setAttribute("required", "");
     titleInput.classList.add('title_input');
     
-    var options = document.createElement('label');
+    let options = document.createElement('label');
     options.innerHTML = 'options';
-    var optionsInput = document.createElement('input');
+    let optionsInput = document.createElement('input');
     optionsInput.setAttribute('type', 'checkbox');
     optionsInput.setAttribute('id', 'check');
     // optionsInput.innerHTML = 'post as anonymus';
     
-    var submitButton = document.createElement('button');
+    let submitButton = document.createElement('button');
     submitButton.classList.add('submit_button');
     submitButton.innerHTML = 'submit';
     
-    // var submitAnchor = document.createElement('a');
-    // submitAnchor.setAttribute('href', 'reddit.html');
-    
-    body.appendChild(titleofPage);
-    body.appendChild(blueLine);
-    body.appendChild(urlDiv);
+    body.appendChild(coverDiv);
+    coverDiv.appendChild(titleofPage);
+    coverDiv.appendChild(blueLine);
+    coverDiv.appendChild(urlDiv);
     urlDiv.appendChild(urlLabel);
     urlDiv.appendChild(urlInput);
     urlDiv.appendChild(title);
@@ -59,7 +60,6 @@ var postCreate = function() {
 } 
 
 var postReddit = function(titleInput, urlInput, getReddit) {
-    console.log(this);
     var redditPost =  new XMLHttpRequest();
     redditPost.open('POST', 'https://time-radish.glitch.me/posts', true);
     redditPost.setRequestHeader('Accept', 'application/json');
@@ -78,6 +78,3 @@ var postReddit = function(titleInput, urlInput, getReddit) {
     redditPost.send(JSON.stringify(newInput));
 }
 
-
-
-postCreate();

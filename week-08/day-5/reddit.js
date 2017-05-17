@@ -1,9 +1,10 @@
 'use strict';
 
 var body = document.querySelector('body');
+var createNewpost = document.querySelector('.creatPost');
+var mainMenu = document.querySelector('.main');
 
 var getReddit = function(callback) {
-    console.log(callback);
     var reddit =  new XMLHttpRequest();
     reddit.open('GET', 'https://time-radish.glitch.me/posts', true);
 
@@ -12,25 +13,26 @@ var getReddit = function(callback) {
             var resp = JSON.parse(reddit.response);
             console.log(resp);
             callback(resp.posts);
+            
         }
     }
     reddit.send();
 }
-
-// module.exports = getReddit;
 
 var gettingData = function(baseData){
     for (let i = 0; baseData.length; i++){
         if (baseData[i].owner === null) {
             baseData[i].owner = 'anonymus';
         }
+        mainMenu.addEventListener('click', gettingData);
+        createNewpost.addEventListener('click', postCreate);
         createPost(baseData[i], i);
     }
 }
 
  var createPost = function(post, i){
-    console.log(post);
     let article = document.createElement('article');
+    article.style.display = 'block';
     
     let span = document.createElement('span');
     span.classList.add('span');
