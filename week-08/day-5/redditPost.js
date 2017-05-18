@@ -51,9 +51,10 @@ var postCreate = function() {
     urlDiv.appendChild(titleInput);
     urlDiv.appendChild(options);
     urlDiv.appendChild(optionsInput);
-    body.appendChild(submitButton);
+    coverDiv.appendChild(submitButton);
     submitButton.addEventListener('click', function(){
         postReddit(titleInput, urlInput, getReddit);
+        coverDiv.style.display = 'none';
     });
     
 } 
@@ -86,5 +87,12 @@ createNewpost.addEventListener('click', function(){
 })
 
 mainMenu.addEventListener('click', function(){
-    createPost();
+    console.log('hello');
+    let artic = document.querySelectorAll('article');
+    for (let i = 0; i < artic.length; i++){
+        artic[i].style.display = 'block';
+    let coverdiv = document.querySelector('.cover_div');
+    // articles.style.display = 'block';
+    coverdiv.style.display = 'none';
+    }
 })

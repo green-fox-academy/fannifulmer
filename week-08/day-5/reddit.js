@@ -4,6 +4,8 @@ var body = document.querySelector('body');
 var createNewpost = document.querySelector('.creatPost');
 
 var getReddit = function(callback) {
+    // let articleDel = document.querySelector('article');
+    // articleDel.innerHTML = '';
     var reddit =  new XMLHttpRequest();
     reddit.open('GET', 'https://time-radish.glitch.me/posts', true);
 
@@ -48,6 +50,7 @@ var gettingData = function(baseData){
     let headline = document.createElement('a');
     headline.setAttribute('href', post.href);
     headline.classList.add('headline');
+    headline.innerHTML = post.title;
     
     let submittion = document.createElement('span');
     submittion.classList.add('submittion');
@@ -56,11 +59,11 @@ var gettingData = function(baseData){
     let modify = document.createElement('a');
     modify.innerHTML = "modify";
     modify.classList = "modify"
+    
     let remove = document.createElement('a');
     remove.innerHTML = "remove";
-    remove.classList = "remove";
-    headline.innerHTML = post.title;
     span.innerHTML = i+1;
+    remove.classList.add("remove");
     
     body.appendChild(article);
     article.appendChild(span);
@@ -71,7 +74,28 @@ var gettingData = function(baseData){
     article.appendChild(submittion);
     article.appendChild(modify);
     article.appendChild(remove);
+    
+    
+    remove.addEventListener('click', function(){
+        deleteReddit(post.id);
+        var articles = document.querySelectorAll('article');
+        article.style.display = "none";
+        console.log(article);
+    });
 
 };
+
+var deleteReddit = function(id) {
+    var xhr =  new XMLHttpRequest();
+    xhr.open('DELETE', 'https://time-radish.glitch.me/posts/' + id, true);
+    xhr.setRequestHeader('Accept', 'application/json');
+
+    xhr.send();
+
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState === 4) {
+        }
+    }
+}
 
 getReddit(gettingData);
