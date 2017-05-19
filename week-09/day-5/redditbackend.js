@@ -6,7 +6,7 @@ const app = express();
 
 app.get('/hello', function(req, res){
     var hello = function() {
-        return 'hello';
+        return 'hello World';
     }
     res.send(hello())    
 });
