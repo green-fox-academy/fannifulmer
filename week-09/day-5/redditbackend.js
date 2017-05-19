@@ -3,6 +3,10 @@
 const mysql = require("mysql");
 const express = require("express");
 const app = express();
+const cors = require('cors');
+let result = {'posts': 0}
+
+app.use(cors());
 
 var conn = mysql.createConnection({
   host: "localhost",
@@ -11,7 +15,6 @@ var conn = mysql.createConnection({
   database: "reddit"
 });
 
-var result = {'posts': 0}
 
 app.get('/posts', function(req, res){
     conn.query('SELECT * FROM posts', function(err, rows){
