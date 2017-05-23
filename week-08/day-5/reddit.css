@@ -70,7 +70,7 @@ article {
 ul {
     display: flex;
     background: black;
-    height: 15px;
+    height: 30px;
     width: 100%;
     justify-content: flex-start;
     align-items: center;
@@ -87,6 +87,11 @@ li {
     font-size: 12px;
     color: white;
     text-decoration: none;
+    font-weight: bold;
+}
+
+li:hover {
+    cursor: pointer;
 }
 
 .url_div {
@@ -124,6 +129,14 @@ li {
     height: 100%;
     background: white;
     position: fixed;
-    top: 15px;
+    top: 30px;
 }
 
+.container {
+    margin : 0;
+    padding: 0;
+}
+
+.remove:hover {
+    cursor: pointer;
+}

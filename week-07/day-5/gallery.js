@@ -2,30 +2,63 @@
 
 var photoCollection = document.querySelectorAll('img');
 var body = document.querySelector('body');
-var images = document.querySelector('.images');
-var button 
+var images = document.querySelectorAll('.images');
+var index;
 
-function onClick() {
+function onClick(e) {
+    var imgSrc = getSource(e);
+    var imgIndex = getIndex(e);
+    index = imgIndex;
     var zoomScreen = document.createElement('div');
-    zoomScreen.className += "close";
-    button = document.createElement('button');
-    button.style.backgroundColor = 'white';
-    button.style.position = "fixed";
-    button.style.right = 0;
-    button.style.top = 0;
+    zoomScreen.classList.add("close");
+    var wrapper = document.createElement('div');
+    wrapper.classList.add("wrapper");
+    var leftButton = document.createElement('button');
+    leftButton.classList.add("leftclick");
+    leftButton.innerHTML = '<';
+    var rightButton = document.createElement('button');
+    rightButton.classList.add("rightclick");
+    rightButton.innerHTML = '>';
+    var newImg = document.createElement('img');
+    newImg.setAttribute('src', imgSrc);
+    newImg.classList.add("zoomPicture");
+    var button = document.createElement('button');
+    button.classList.add("button");
     button.innerHTML = "X";
-    console.log(zoomScreen);
-    zoomScreen.style.width = '100%';
-    zoomScreen.style.height = '100%';
-    zoomScreen.style.position = "fixed"
-    zoomScreen.style.left = 0;
-    zoomScreen.style.top = 0;
-    zoomScreen.style.backgroundColor = 'white';
     zoomScreen.zIndex = 10;
     body.appendChild(zoomScreen);
-    zoomScreen.appendChild(button);
+    zoomScreen.appendChild(wrapper);
+    wrapper.appendChild(button);
+    wrapper.appendChild(newImg);
+    wrapper.appendChild(leftButton);
+    wrapper.appendChild(rightButton);
     button.addEventListener('click', xClick);
+    leftButton.addEventListener('click', lClick);
+    rightButton.addEventListener('click', rClick);
+    console.log(newImg);
+
+
+function lClick() {
+    if (index === 0 || index === -1) {
+        index = photoCollection.length-1;
+        newImg.setAttribute('src', photoCollection[index].getAttribute('src'));
+    } else {
+        index--;
+        newImg.setAttribute('src', photoCollection[index].getAttribute('src'));
+    console.log(newImg);
 }
+}
+
+function rClick() {
+    if (index === photoCollection.length-1){
+        index = 0;
+        newImg.setAttribute('src', photoCollection[index].getAttribute('src'));
+    } else {
+    index++;
+    newImg.setAttribute('src', photoCollection[index].getAttribute('src'));
+}
+}
+};
 
 for (var i = 0; i < photoCollection.length; i++) {
     photoCollection[i].addEventListener('click', onClick);
@@ -33,7 +66,18 @@ for (var i = 0; i < photoCollection.length; i++) {
 
 function xClick() {
     var zoomScreen = document.querySelector('.close');
-    console.log(zoomScreen);
     body.removeChild(zoomScreen);
+}
+
+function getSource(e) {
+  var target = e.target || e.srcElement;
+  var source = target.getAttribute('src');
+  return source;
+}
+
+function getIndex(e) {
+  var target = e.target || e.srcElement;
+  var index = target.getAttribute('alt');
+  return Number(index);
 }
 

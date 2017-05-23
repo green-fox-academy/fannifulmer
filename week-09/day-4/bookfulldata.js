@@ -72,13 +72,13 @@ app.get('/books', function(req, res){
     if (queryParts.length !== 0){
         sqlBase += " WHERE " + queryParts.join(" AND ");
     }
+    console.log(sqlBase);
     
     conn.query(sqlBase, function(err,rows){
         if(err) {
             console.log("PARA", err); 
         } else {
             rows.forEach(row => {
-                console.log(rows);
                 result += "<tr> <td>" + row.book_name + "</td>";
                 result += "<td>" + row.aut_name + "</td>";
                 result += "<td>" + row.cate_descrip + "</td>";

@@ -44,7 +44,7 @@ test('sum element', function (t) {
 
 test('sum element', function (t) {
     var sum2 = new count();
-    t.equal(sum2.sumAdder(['hello', 1]), '0hello1');
+    t.equal(sum2.sumAdder(['hello', 1]), 'The list should only contain numbers');
     t.end();
 });
 

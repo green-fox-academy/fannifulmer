@@ -3,8 +3,11 @@
 var body = document.querySelector('body');
 var createNewpost = document.querySelector('.creatPost');
 var mainMenu = document.querySelector('.main');
+var container = document.querySelector('.container');
+var url = 'http://localhost:3000/posts';
 
 var postCreate = function() {
+    container.innerHTML = '';
     let coverDiv = document.createElement('div');
     coverDiv.classList.add('cover_div')
     
@@ -41,7 +44,7 @@ var postCreate = function() {
     submitButton.classList.add('submit_button');
     submitButton.innerHTML = 'submit';
     
-    body.appendChild(coverDiv);
+    container.appendChild(coverDiv);
     coverDiv.appendChild(titleofPage);
     coverDiv.appendChild(blueLine);
     coverDiv.appendChild(urlDiv);
@@ -60,14 +63,15 @@ var postCreate = function() {
 } 
 
 var postReddit = function(titleInput, urlInput, getReddit) {
-    var redditPost =  new XMLHttpRequest();
-    redditPost.open('POST', 'https://time-radish.glitch.me/posts', true);
-    redditPost.setRequestHeader('Accept', 'application/json');
-    redditPost.setRequestHeader('Content-Type', 'application/json');
+    var xhr =  new XMLHttpRequest();
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Accept', 'application/json');
+    xhr.setRequestHeader('Content-Type', 'application/json');
     
-    redditPost.onreadystatechange = function() {
-        if(redditPost.readyState === 4 && redditPost.status === 200) {
-            var resp = JSON.parse(redditPost.response);
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState === 4 && xhr.status === 200) {
+            console.log(xhr.response);
+            var resp = JSON.parse(xhr.response);
             getReddit(gettingData);
         }
     }
@@ -75,24 +79,24 @@ var postReddit = function(titleInput, urlInput, getReddit) {
         title: titleInput.value,
         href: urlInput.value
     }
-    redditPost.send(JSON.stringify(newInput));
+    xhr.send(JSON.stringify(newInput));
 }
 
 createNewpost.addEventListener('click', function(){
+    console.log('bello');
     postCreate();
-    let articles = document.querySelectorAll('article');
-    for (let i = 0; i < articles.length; i++){
-        articles[i].style.display = 'none';
-    }
+    // let articles = document.querySelectorAll('article');
+    // for (let i = 0; i < articles.length; i++){
+    //     articles[i].style.display = 'none';
+    // }
 })
 
 mainMenu.addEventListener('click', function(){
     console.log('hello');
-    let artic = document.querySelectorAll('article');
-    for (let i = 0; i < artic.length; i++){
-        artic[i].style.display = 'block';
-    let coverdiv = document.querySelector('.cover_div');
-    // articles.style.display = 'block';
-    coverdiv.style.display = 'none';
-    }
+    // let artic = document.querySelectorAll('article');
+    // for (let i = 0; i < artic.length; i++){
+    //     artic[i].style.display = 'block';
+    // let coverdiv = document.querySelector('.cover_div');
+    // coverdiv.style.display = 'none';
+    // }
 })
