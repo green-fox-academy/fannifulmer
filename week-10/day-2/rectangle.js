@@ -14,7 +14,12 @@ class Rectangle {
         var area = width * height; 
     console.log(area);
     }
+    getCircumference(width, height){
+        var circumference = 2 * (width + height);
+        console.log(circumference);
+    }
 }
 
 var bigRectangle = new Rectangle();
 bigRectangle.getArea(3000, 2000);
+bigRectangle.getCircumference(3000, 2000);
