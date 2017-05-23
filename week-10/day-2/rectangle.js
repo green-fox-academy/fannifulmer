@@ -12,14 +12,34 @@ class Rectangle {
     }
     getArea(width, height){
         var area = width * height; 
-    console.log(area);
+        return area;
     }
     getCircumference(width, height){
         var circumference = 2 * (width + height);
-        console.log(circumference);
+        return circumference;
     }
 }
 
 var bigRectangle = new Rectangle();
 bigRectangle.getArea(3000, 2000);
 bigRectangle.getCircumference(3000, 2000);
+
+
+function rectangleFactory(width, height) {
+    this.width = width;
+    this.height = height;
+}
+
+rectangleFactory.prototype.getArea = function(width, height) {
+    var area = width * height;
+    return area;
+}
+
+rectangleFactory.prototype.getCircumference = function(width, height) {
+    var circumference = 2 * (width + height);
+    return circumference;
+}
+
+var smallRectangle = new rectangleFactory();
+smallRectangle.getArea(4, 6);
+smallRectangle.getCircumference(4, 6);
