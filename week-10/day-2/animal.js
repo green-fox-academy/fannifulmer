@@ -5,7 +5,7 @@
 // Every animal should have a method called say() that prints what the animal says
 
 class Animal {
-    constructor(){
+    constructor() {
         this.sound = 'roar'
     }
     say(){
@@ -15,3 +15,13 @@ class Animal {
 
 var lion = new Animal();
 lion.say();
+
+
+function animalSoundStudio() {
+    var animal = {};
+    animal.sound = 'miau';
+    return animal
+}
+
+var cat = animalSoundStudio ();
+console.log(cat.sound);
