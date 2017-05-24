@@ -95,6 +95,7 @@ audio::-webkit-media-controls-play-button {
     height: 20px;
     list-style: none;
     padding: 10px;
+    margin: 3px;
 }
 
 .current_song {
@@ -115,6 +116,11 @@ audio::-webkit-media-controls-play-button {
 
 .controll_rewind {
     margin: 15px;
+}
+
+.listStyle {
+    display: flex;
+    justify-content: space-between;
 }
 
 
