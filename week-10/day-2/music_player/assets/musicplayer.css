@@ -15,8 +15,8 @@ body {
 .musicplayer_container {
     display: flex;
     background: grey;
-    width: 600px;
-    height: 300px;
+    width: 800px;
+    height: 500px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4);
 }
 
@@ -116,18 +116,5 @@ audio::-webkit-media-controls-play-button {
 .controll_rewind {
     margin: 15px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
