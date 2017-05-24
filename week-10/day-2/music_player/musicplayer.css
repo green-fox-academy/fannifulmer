@@ -88,7 +88,7 @@ audio::-webkit-media-controls-play-button {
 .tracks {
     overflow: auto;
     height: 83%;
-    background: pink;
+    background: linear-gradient(135deg, #00bec7, #0073e8);
 }
 
 .tracks li, .playlist_container li, .playlist_container h2 {
@@ -104,11 +104,18 @@ audio::-webkit-media-controls-play-button {
 .current_artist {
     padding-left: 10px;
 }
-
-.playlist_container {
-    
+.controll_buttons {
+    display: flex;
+    padding: 10px;
 }
 
+.controll_forward {
+    margin: 15px;
+}
+
+.controll_rewind {
+    margin: 15px;
+}
 
 
 
