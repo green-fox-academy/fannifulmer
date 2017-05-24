@@ -3,21 +3,67 @@
     <head>
         <meta charset="utf-8">
         <title>personal music player</title>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+        <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" rel="stylesheet"> -->
         <link rel="stylesheet" href="musicplayer.css">
     </head>
     <body>
         <div class="musicplayer_container">
             <article class="playlist_container">
+                <img src="music-placeholder.png" alt="album-cover" class="album_cover">
                 <div class="logo">
-                    <img src="foxplayer.png" alt="greenfox">
+                    <img src="foxplayer.png" alt="greenfox" class="fox_logo">
+                </div>
+                <div class="playlist_container">
+                    <ul>
+                        <h2>Playlist</h2>
+                        <li>All tracks</li>
+                        <li>Favorites</li>
+                    </ul>
                 </div>
             </article>
-            <article class="track_container"></article>
+            <article class="track_container">
+                <div class="currently_playing">
+                    <h1 class="current_song">Purple Drift</h1>
+                    <h4 class="current_artist">Ellie Goulding</h4>
+                </div>
+                <div class="tracks">
+                    <ul>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <!-- <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li>
+                        <li><span>1.</span><a>Purple Drift </a><span>3:30</span></li> -->
+                    </ul>
+                </div>
+            </article>
             <article class="control_panel">
+                <div class="controll_buttons">
+                    <img src="rewind.svg" alt="">
+                    <img src="forward.svg" alt="">    
+                </div>
                 <audio controls>
                     <source src="Organoid_-_09_-_Purple_Drift.mp3" type="audio/mpeg"></source>    
                 </audio>
+                <img src="shuffle.svg" alt="">
             </article>
         </div>
     </body>

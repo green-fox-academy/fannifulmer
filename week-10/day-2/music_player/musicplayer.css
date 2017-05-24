@@ -1,8 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
 body {
     height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Oxygen', sans-serif;
 }
 
 .musicplayer_container {
@@ -10,33 +17,110 @@ body {
     background: grey;
     width: 800px;
     height: 500px;
-    border: solid 1px grey;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4);
 }
 
 .playlist_container{
     background: #f5f5f5;
-    width: 100%;
-    height: 100%;
+    flex-basis: 50%;
 }
 
-.track_container {
-    width: 100%;
-    height: 100%;
-}
 
 .control_panel {
+    display: flex;
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
     background: #dddddd;
-    width: 800px;
-    height: 10vh;
     position: absolute;
     align-self: flex-end;
-    border: solid 1px grey;
-}
-
-.logo {
-    margin: 10px;
+    width: 780px;
+    height: 40px;
+    padding: 10px;
 }
 
 audio {
-    z-index: 10;
+    width: 100vw;
+    height: 40px;
 }
+
+audio::-webkit-media-controls, audio::-webkit-media-controls-panel {
+    background: transparent;
+}
+
+audio::-webkit-media-controls-play-button {
+    margin: 40px;
+}
+
+.album_cover {
+    float: right;
+    width: 40%;
+}
+
+.fox_logo {
+    width: 25%;
+    height: 25%;
+    margin: 10px;
+}
+
+.track_container {
+    flex-basis: 50%;
+}
+
+
+.currently_playing {
+    height: 15%;
+    background:  #f5f5f5;
+}
+
+.tracks::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.tracks::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 8px rgba(0,0,0,0.3);
+}
+
+.tracks::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
+
+.tracks {
+    overflow: auto;
+    height: 83%;
+    background: pink;
+}
+
+.tracks li, .playlist_container li, .playlist_container h2 {
+    height: 20px;
+    list-style: none;
+    padding: 10px;
+}
+
+.current_song {
+    padding: 10px 10px 0px 10px;
+}
+
+.current_artist {
+    padding-left: 10px;
+}
+
+.playlist_container {
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
