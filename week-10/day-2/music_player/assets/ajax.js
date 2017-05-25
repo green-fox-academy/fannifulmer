@@ -43,15 +43,15 @@ const ajax = function(url, callback) {
 }
 
 const renderPlaylists = function(response) {
-    console.log(response);
     const output = Mustache.render("{{#playlists}} <li class='listStyle'>{{title}}<span class='deleter'>X</span></li> {{/playlists}}", {playlists:response});
-    console.log(response);
     playlists.innerHTML = output;
 }
 
 
 const renderTracks = function(response) {
     const tracksOutput = Mustache.render("{{#tracks}} <li class='clicked_track'><span>1.</span><a>{{title}}</a><span>{{duration}}</span></li> {{/tracks}}", {tracks:response});
+    console.log({tracks:response});
+    console.log(tracksOutput);
     tracklists.innerHTML = tracksOutput;
     // let onClickTrack = document.querySelectorAll('.clicked_track');
 }
@@ -60,11 +60,6 @@ const currentPlayingSong = function(response){
     console.log('alma');
 }
 
-const renderCurrentPlay = function(response) {
-    // const currentPlayOutput = Mustache.render("{{#currentPlay}}<h1 class='current_song'>{{title}}</h1><h4 class='current_artist'>{{artist}}</h4>{{/currentPlay}}", {currentPlay:response});
-    // currentlyPlay.innerHTML = currentPlayOutput;
-    currentlyPlay.innerHTML = "<h1 class='current_song'>" + response[0].title + "</h1><h4 class='current_artist'>" + response[0].artist + "</h4>"
-}
 
 const audioControll = function(response) {
     let currentSong = document.querySelectorAll('.clicked_track');
@@ -72,15 +67,21 @@ const audioControll = function(response) {
         track.addEventListener('click', function(){
             const trackIndex = Array.from(track.parentNode.children).indexOf(track);
             songChanger(response, trackIndex);
-            // console.log(response[1].path);
+            renderCurrentPlay(response, trackIndex);
+            
         })   
     })    
 }
 
-const songChanger = function(resp, trackIndex){
+const songChanger = function(resp, trackIndex) {
     let songAudio = document.querySelector('audio');
-    console.log(trackIndex);
     songAudio.setAttribute('src', resp[trackIndex].path);
+}
+
+const renderCurrentPlay = function(resp, trackIndex) {
+    // const currentPlayOutput = Mustache.render("{{#currentPlay}}<h1 class='current_song'>{{title}}</h1><h4 class='current_artist'>{{artist}}</h4>{{/currentPlay}}", {currentPlay:response});
+    // currentlyPlay.innerHTML = currentPlayOutput;
+    currentlyPlay.innerHTML = "<h1 class='current_song'>" + resp[trackIndex].title + "</h1><h4 class='current_artist'>" + resp[trackIndex].artist + "</h4>"
 }
 
 getPlaylists(ajax)
