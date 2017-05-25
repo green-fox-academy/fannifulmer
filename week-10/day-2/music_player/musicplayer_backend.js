@@ -5,12 +5,12 @@ const mysql = require("mysql");
 const bodyParser = require("body-parser");
 const cors = require('cors');
 const app = express();
-var result = {'playlists': 0};
-var trackResult = {'tracks': 0};
+var result;
+var trackResult;
 
 app.use('/assets', express.static('assets'));
-app.use(cors());
-app.use(bodyParser.json());
+// app.use(cors());
+// app.use(bodyParser.json());
 
 var conn = mysql.createConnection({
   host: "localhost",
@@ -28,7 +28,7 @@ app.get('/playlists', function(req, res){
         if(err) {
             console.log("PARA", err); 
         } else {
-            result.playlists = rows;
+            result = rows;
         }
         res.send(result);
     })
@@ -39,7 +39,7 @@ app.get('/playlist-tracks', function(req, res){
         if(err) {
             console.log("PARA", err); 
         } else {
-            trackResult.tracks = rows;
+            trackResult = rows;
         }
         res.send(trackResult);
     })

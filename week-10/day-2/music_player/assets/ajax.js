@@ -10,14 +10,14 @@ const getPlaylists = function(callback) {
     const endpoint = 'http://localhost:3000/playlists';
     callback(endpoint, function(resp) {
         console.log(resp);
-        renderPlaylists(resp.playlists);
+        renderPlaylists(resp);
     });
 }
 
 const getTracks = function(callback) {
     const endpoint = 'http://localhost:3000/playlist-tracks';
     callback(endpoint, function(resp) {
-        renderTracks(resp.tracks);
+        renderTracks(resp);
     });
 }
 
@@ -50,23 +50,26 @@ const renderPlaylists = function(response) {
 
 
 const renderTracks = function(response) {
-    // let songDuration = getTime(response[0].duration)
-    const tracksOutput = Mustache.render("{{#tracks}} <li class='listStyle'><span>1.</span><a>{{title}}</a><span>{{duration}}</span></li> {{/tracks}}", {tracks:response});
+    const tracksOutput = Mustache.render("{{#tracks}} <li class='clicked_track'><span>1.</span><a>{{title}}</a><span>{{duration}}</span></li> {{/tracks}}", {tracks:response});
     tracklists.innerHTML = tracksOutput;
+    let onClickTrack = document.querySelectorAll('.clicked_track');
+    // console.log(onClickTrack[1]);
+    // onClickTrack.addEventListener('click', function(){
+    //     console.log('alma');
+    // })
 }
 
-// const renderCurrentPlay = function(response) {
-//     const currentPlayOutput = Mustache.render("{{#currentPlay}}<h1 class='current_song'>{{title}}</h1><h4 class='current_artist'>{{artist}}</h4>{{/currentPlay}}", {currentPlay:response});
-//     currentlyPlay.innerHTML = currentPlayOutput;
-// }
-// 
-// const getTime = function(time) {
-//     var minutes = "0" + Math.floor(time / 60);
-//     var seconds = "0" + time % 60;
-//     return minutes + ":" + seconds;
-// }
+const currentPlayingSong = function(response){
+    console.log('alma');
+}
+
+const renderCurrentPlay = function(response) {
+    // const currentPlayOutput = Mustache.render("{{#currentPlay}}<h1 class='current_song'>{{title}}</h1><h4 class='current_artist'>{{artist}}</h4>{{/currentPlay}}", {currentPlay:response});
+    // currentlyPlay.innerHTML = currentPlayOutput;
+    currentlyPlay.innerHTML = "<h1 class='current_song'>" + response[0].title + "</h1><h4 class='current_artist'>" + response[0].artist + "</h4>"
+}
 
 
 getPlaylists(ajax)
 getTracks(ajax);
-// getCurrent(ajax);
+getCurrent(ajax);
