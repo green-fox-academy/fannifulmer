@@ -25,32 +25,6 @@ body {
     flex-basis: 50%;
 }
 
-
-.control_panel {
-    display: flex;
-    /*justify-content: space-between;*/
-    /*align-items: center;*/
-    background: #dddddd;
-    position: absolute;
-    align-self: flex-end;
-    width: 780px;
-    height: 40px;
-    padding: 10px;
-}
-
-audio {
-    width: 100vw;
-    height: 40px;
-}
-
-audio::-webkit-media-controls, audio::-webkit-media-controls-panel {
-    background: transparent;
-}
-
-audio::-webkit-media-controls-play-button {
-    margin: 40px;
-}
-
 .album_cover {
     float: right;
     width: 40%;
@@ -70,6 +44,7 @@ audio::-webkit-media-controls-play-button {
 .currently_playing {
     height: 15%;
     background:  #f5f5f5;
+    border-left: 2px solid #dddddd;
 }
 
 .tracks::-webkit-scrollbar {
@@ -88,14 +63,22 @@ audio::-webkit-media-controls-play-button {
 .tracks {
     overflow: auto;
     height: 83%;
-    background: linear-gradient(135deg, #00bec7, #0073e8);
+    background: #f5f5f5;
+    border-left: 2px solid #dddddd;
 }
 
-.tracks li, .playlist_container li, .playlist_container h2 {
+.listStyle{
     height: 20px;
     list-style: none;
     padding: 10px;
-    margin: 3px;
+    display: flex;
+    justify-content: space-between;
+    background: #dddddd;
+    margin: 5px;
+}
+
+.playlist_container h2 {
+    margin: 5px 5px 15px 5px;
 }
 
 .current_song {
@@ -110,17 +93,54 @@ audio::-webkit-media-controls-play-button {
     padding: 10px;
 }
 
-.controll_forward {
-    margin: 15px;
-}
-
-.controll_rewind {
-    margin: 15px;
-}
-
-.listStyle {
+.control_panel {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
+    background: #dddddd;
+    position: absolute;
+    align-self: flex-end;
+    width: 780px;
+    height: 40px;
+    padding: 10px;
 }
+
+.audio_files {
+    /*display: flex;*/
+    /*justify-content: flex-start;
+    align-items: center;*/
+}
+
+.controll_rewind img:first-child {
+    margin-right: 35px;
+}
+
+audio::-webkit-media-controls, audio::-webkit-media-controls-panel {
+    background: transparent;
+}
+
+audio::-webkit-media-controls-play-button {
+    /*margin-right: 50px;*/
+}
+
+audio {
+    width: 50vw;
+    height: 40px;    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
