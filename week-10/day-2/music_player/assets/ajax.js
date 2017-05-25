@@ -18,7 +18,7 @@ const getTracks = function(callback) {
     const endpoint = 'http://localhost:3000/playlist-tracks';
     callback(endpoint, function(resp) {
         renderTracks(resp);
-        audioControll();
+        audioControll(resp);
     });
 }
 
@@ -66,14 +66,21 @@ const renderCurrentPlay = function(response) {
     currentlyPlay.innerHTML = "<h1 class='current_song'>" + response[0].title + "</h1><h4 class='current_artist'>" + response[0].artist + "</h4>"
 }
 
-const audioControll = function() {
+const audioControll = function(response) {
     let currentSong = document.querySelectorAll('.clicked_track');
     currentSong.forEach(function(track){
         track.addEventListener('click', function(){
-            Array.from(track.parentNode.children).indexOf(track)
-            console.log(track);
+            const trackIndex = Array.from(track.parentNode.children).indexOf(track);
+            songChanger(response, trackIndex);
+            // console.log(response[1].path);
         })   
     })    
+}
+
+const songChanger = function(resp, trackIndex){
+    let songAudio = document.querySelector('audio');
+    console.log(trackIndex);
+    songAudio.setAttribute('src', resp[trackIndex].path);
 }
 
 getPlaylists(ajax)
