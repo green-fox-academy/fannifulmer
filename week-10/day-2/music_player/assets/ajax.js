@@ -74,6 +74,7 @@ const playNextSong = function(resp, trackIndex){
     audio.addEventListener('ended', function(){
         console.log('valami');
         trackIndex++;
+        songChanger(resp, trackIndex);
         audio.setAttribute('autoplay', "");
         audio.setAttribute('src', resp[trackIndex].path);
         audio.load();  
@@ -82,6 +83,7 @@ const playNextSong = function(resp, trackIndex){
 
 const songChanger = function(resp, trackIndex) {
     let songAudio = document.querySelector('audio');
+    renderCurrentPlay(resp, trackIndex);
     songAudio.setAttribute('autoplay', "");
     songAudio.setAttribute('src', resp[trackIndex].path);
 }
