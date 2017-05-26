@@ -25,7 +25,7 @@ const getTracks = function(callback) {
 const getCurrent = function(callback) {
     const endpoint = 'http://localhost:3000/playlist-tracks';
     callback(endpoint, function(resp) {
-        renderCurrentPlay(resp);
+        // renderCurrentPlay(resp);
     });
 }
 
@@ -56,11 +56,6 @@ const renderTracks = function(response) {
     // let onClickTrack = document.querySelectorAll('.clicked_track');
 }
 
-const currentPlayingSong = function(response){
-    console.log('alma');
-}
-
-
 const audioControll = function(response) {
     let currentSong = document.querySelectorAll('.clicked_track');
     currentSong.forEach(function(track){
@@ -68,22 +63,61 @@ const audioControll = function(response) {
             const trackIndex = Array.from(track.parentNode.children).indexOf(track);
             songChanger(response, trackIndex);
             renderCurrentPlay(response, trackIndex);
-            
+            playNextSong(response, trackIndex);
         })   
     })    
 }
 
+const playNextSong = function(resp, trackIndex){
+    console.log('hello');
+    let audio = document.querySelector('audio');
+    audio.addEventListener('ended', function(){
+        console.log('valami');
+        trackIndex++;
+        audio.setAttribute('autoplay', "");
+        audio.setAttribute('src', resp[trackIndex].path);
+        audio.load();  
+    })
+}
+
 const songChanger = function(resp, trackIndex) {
     let songAudio = document.querySelector('audio');
+    songAudio.setAttribute('autoplay', "");
     songAudio.setAttribute('src', resp[trackIndex].path);
 }
 
 const renderCurrentPlay = function(resp, trackIndex) {
-    // const currentPlayOutput = Mustache.render("{{#currentPlay}}<h1 class='current_song'>{{title}}</h1><h4 class='current_artist'>{{artist}}</h4>{{/currentPlay}}", {currentPlay:response});
-    // currentlyPlay.innerHTML = currentPlayOutput;
     currentlyPlay.innerHTML = "<h1 class='current_song'>" + resp[trackIndex].title + "</h1><h4 class='current_artist'>" + resp[trackIndex].artist + "</h4>"
 }
+
 
 getPlaylists(ajax)
 getTracks(ajax);
 getCurrent(ajax);
+
+// const playNextSong = function(resp, trackIndex){
+//     let audio = document.querySelector('audio');
+//     audio.addEventListener('ended', playNextSong);
+//     var c = 0;
+//     var songs = reps[trackIndex].path
+// 
+//     var a=document.getElementById("au");
+//     a.addEventListener('ended', function(){
+// 
+//         document.getElementById("au").src=songs[c]; 
+//         a.load();  
+//         console.log(c); 
+//         c++;
+
+    // console.log('kiscica');
+    // let currentSong = document.querySelectorAll('.clicked_track');
+    // currentSong.forEach(function(track){
+    //     track.addEventListener('click', function(){
+    //         const trackIndex = Array.from(track.parentNode.children).indexOf(track);
+    //         let audio = document.querySelector('audio');
+    //         trackIndex++;
+    //         audio.setAttribute('src', resp[trackIndex].path);
+    //         audio.load();
+    //     })   
+    // })   
+// }
