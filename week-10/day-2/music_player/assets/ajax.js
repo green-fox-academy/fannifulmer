@@ -9,7 +9,6 @@ const deleter = document.querySelectorAll('.deleter');
 const getPlaylists = function(callback) {
     const endpoint = 'http://localhost:3000/playlists';
     callback(endpoint, function(resp) {
-        console.log(resp);
         renderPlaylists(resp);
     });
 }
@@ -37,19 +36,37 @@ const ajax = function(url, callback) {
         if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
             var resp = JSON.parse(xhr.response);
             callback(resp);
+            keypress();
         }
     }
     xhr.send();
 }
 
+const keypress = function() {
+    console.log('megtalálta');
+    const audioSpaceToogle = document.querySelector('audio');
+    let counter = 0;
+    document.body.onkeyup = function(key){
+        if(counter === 0 && key.keyCode === 32 ){
+            console.log('leáll');
+            audioSpaceToogle.play();
+            counter++;
+        } else if (key.keyCode === 32){
+            console.log('megy');
+            audioSpaceToogle.pause();
+            counter--;
+        }
+    }
+}
 const renderPlaylists = function(response) {
-    const output = Mustache.render("{{#playlists}} <li class='listStyle'>{{title}}<span class='deleter'>X</span></li> {{/playlists}}", {playlists:response});
+    const output = Mustache.render("{{#playlists}} <li class='listStyle'>{{title}}<span class='deleter'><img src='assets/trash_icon.png' class='trash_can'></span></li> {{/playlists}}", {playlists:response});
     playlists.innerHTML = output;
 }
 
 
 const renderTracks = function(response) {
     const tracksOutput = Mustache.render("{{#tracks}} <li class='clicked_track'><span>1.</span><a>{{title}}</a><span>{{duration}}</span></li> {{/tracks}}", {tracks:response});
+    console.log(response);
     console.log({tracks:response});
     console.log(tracksOutput);
     tracklists.innerHTML = tracksOutput;
@@ -61,34 +78,45 @@ const audioControll = function(response) {
     currentSong.forEach(function(track){
         track.addEventListener('click', function(){
             const trackIndex = Array.from(track.parentNode.children).indexOf(track);
-            songChanger(response, trackIndex);
-            renderCurrentPlay(response, trackIndex);
-            playNextSong(response, trackIndex);
-        })   
+            songChanger(response, trackIndex, track);
+            playNextSong(response, trackIndex, track, currentSong);
+            highlighter(response, trackIndex, currentSong);
+        })
     })    
 }
 
-const playNextSong = function(resp, trackIndex){
-    console.log('hello');
-    let audio = document.querySelector('audio');
-    audio.addEventListener('ended', function(){
-        console.log('valami');
-        trackIndex++;
-        songChanger(resp, trackIndex);
-        audio.setAttribute('autoplay', "");
-        audio.setAttribute('src', resp[trackIndex].path);
-        audio.load();  
+const trackCaller = function(){
+    
+}
+
+const highlighter = function(resp, trackIndex, currentSong) {
+        currentSong.forEach(function(el){
+        el.classList.remove('songHighlight');
+        currentSong[trackIndex].classList.add('songHighlight');
     })
 }
 
-const songChanger = function(resp, trackIndex) {
-    let songAudio = document.querySelector('audio');
-    renderCurrentPlay(resp, trackIndex);
-    songAudio.setAttribute('autoplay', "");
-    songAudio.setAttribute('src', resp[trackIndex].path);
+const playNextSong = function(resp, trackIndex, track, currentSong){
+    let audio = document.querySelector('audio');
+    audio.addEventListener('ended', function(){
+        if (trackIndex === currentSong.length -1){
+            trackIndex = 0;
+        } else {
+            trackIndex++;        
+        }
+        songChanger(resp, trackIndex); 
+        highlighter(resp, trackIndex, currentSong);
+    })
 }
 
-const renderCurrentPlay = function(resp, trackIndex) {
+const songChanger = function(resp, trackIndex, track) {
+    let songAudio = document.querySelector('audio');
+    songAudio.setAttribute('autoplay', "");
+    songAudio.setAttribute('src', resp[trackIndex].path);
+    renderCurrentPlay(resp, trackIndex, track);
+}
+
+const renderCurrentPlay = function(resp, trackIndex, track) {
     currentlyPlay.innerHTML = "<h1 class='current_song'>" + resp[trackIndex].title + "</h1><h4 class='current_artist'>" + resp[trackIndex].artist + "</h4>"
 }
 
@@ -96,30 +124,3 @@ const renderCurrentPlay = function(resp, trackIndex) {
 getPlaylists(ajax)
 getTracks(ajax);
 getCurrent(ajax);
-
-// const playNextSong = function(resp, trackIndex){
-//     let audio = document.querySelector('audio');
-//     audio.addEventListener('ended', playNextSong);
-//     var c = 0;
-//     var songs = reps[trackIndex].path
-// 
-//     var a=document.getElementById("au");
-//     a.addEventListener('ended', function(){
-// 
-//         document.getElementById("au").src=songs[c]; 
-//         a.load();  
-//         console.log(c); 
-//         c++;
-
-    // console.log('kiscica');
-    // let currentSong = document.querySelectorAll('.clicked_track');
-    // currentSong.forEach(function(track){
-    //     track.addEventListener('click', function(){
-    //         const trackIndex = Array.from(track.parentNode.children).indexOf(track);
-    //         let audio = document.querySelector('audio');
-    //         trackIndex++;
-    //         audio.setAttribute('src', resp[trackIndex].path);
-    //         audio.load();
-    //     })   
-    // })   
-// }

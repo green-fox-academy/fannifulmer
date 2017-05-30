@@ -15,9 +15,14 @@ body {
 .musicplayer_container {
     display: flex;
     background: grey;
-    width: 800px;
-    height: 500px;
+    width: 700px;
+    height: 450px;
+    border-radius: 10px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+article {
+    border-radius: 10px;
 }
 
 .playlist_container{
@@ -45,6 +50,7 @@ body {
     height: 15%;
     background:  #f5f5f5;
     border-left: 2px solid #dddddd;
+    border-radius: 0px 10px 0px 0px;
 }
 
 .tracks::-webkit-scrollbar {
@@ -74,7 +80,8 @@ body {
     display: flex;
     justify-content: space-between;
     background: #dddddd;
-    margin: 5px;
+    padding: 15px;
+    cursor: pointer;
 }
 
 .playlist_container h2 {
@@ -100,9 +107,10 @@ body {
     background: #dddddd;
     position: absolute;
     align-self: flex-end;
-    width: 780px;
+    width: 670px;
     height: 40px;
     padding: 10px;
+    padding-left: 20px;
 }
 
 .audio_files {
@@ -111,16 +119,20 @@ body {
     align-items: center;*/
 }
 
-.controll_rewind img:first-child {
-    margin-right: 35px;
-}
-
 audio::-webkit-media-controls, audio::-webkit-media-controls-panel {
+    /*position: relative;*/
     background: transparent;
 }
 
 audio::-webkit-media-controls-play-button {
-    /*margin-right: 50px;*/
+    position: absolute;
+    /*left: 15%;
+    bottom: 11%;*/
+    margin-left: 10px;
+}
+
+audio::-webkit-media-controls-current-time-display {
+    margin-left: 80px;
 }
 
 audio {
@@ -128,9 +140,25 @@ audio {
     height: 40px;    
 }
 
+.songHighlight {
+    background: white;
+}
 
+li:nth-child(even) {
+    background: #c6c6c6;
+}
 
+.control_rewind, .controll_forward {
+    position: absolute;
+}
 
+.controll_forward {
+    margin-left: 60px;
+}
+
+.trash_can {
+    width: 20px;
+}
 
 
 
