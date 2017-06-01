@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1300px;
+    height: 800px;
+}
+
+.todos {
+    display: flex;
+    padding: 20px;
+    background: #dddddd;
+    width: 500px;
+    height: 600px;
+    flex-direction: column;
+}
+
+h1 {
+    padding: 10px;
+}
+
