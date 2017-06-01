@@ -1,20 +1,23 @@
 'use strict';
 
-class Rectangle {
-    constructor(width, height) {
-        this.width = width;
-        this.height = height;
+class ajaxQuest {
+    constructor(method, url) {
+        this.method = method;
+        this.url = url;
     }
-    getArea(width, height){
-        var area = width * height; 
-        return area;
-    }
-    getCircumference(width, height){
-        var circumference = 2 * (width + height);
-        return circumference;
+    ajax(method, url){
+        const xhr =  new XMLHttpRequest();
+        xhr.open(method, url, true);
+    
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                var resp = JSON.parse(xhr.response);
+                console.log(resp);
+            }
+        }
+        xhr.send();
     }
 }
 
-var bigRectangle = new Rectangle();
-bigRectangle.getArea(3000, 2000);
-bigRectangle.getCircumference(3000, 2000);
+var getTodos = new ajaxQuest();
+getTodos.ajax('GET', 'http://localhost:3000/todos');
