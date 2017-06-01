@@ -3,22 +3,24 @@
     background: #50e3c2;
     justify-content: center;
     align-items: center;
-    width: 1350px;
-    height: 800px;
+    width: 100vw;
+    height: 100vh;
 }
 
 .todos {
     display: flex;
-    padding: 20px;
     background: #f7f7f7;
-    width: 500px;
-    height: 600px;
+    width: 30vw;
+    height: 70vh;
     flex-direction: column;
+    margin: 20px;
+    padding: 50px;
 }
 
 h1 {
 	font-family: Lato-Light, sans-serif;
-	font-size: 64px;
+	font-size: 4vw;
+    font-weight: lighter;
 	color: #bbbbbb;
     align-self: center;
     margin: 10px;
@@ -33,7 +35,7 @@ h1 {
 
 button {
 	font-family: Lato-Regular, sans-serif;
-	font-size: 26px;
+	font-size: 2vw;
     background: #df69e8;
 	color: #ffffff;
     width: 15%;
@@ -45,18 +47,17 @@ button {
 
 img {
     width: 35px;
+    align-self: flex-end;
 }
 
 .todo_item {
 	font-family: Lato-Regular, sans-serif;
-	font-size: 26px;
+	font-size: 2vw;
 	line-height: 2.2;
 	color: #bbbbbb;
     display: flex;
     flex-direction: row;
-    /*flex-basis: 50%;*/
     justify-content: space-between;
-    margin: 15px;
     height: 40px;
-
+    margin-top: 5px;
 }
