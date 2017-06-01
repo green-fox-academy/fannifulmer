@@ -51,13 +51,14 @@ img {
 }
 
 .todo_item {
+    display: flex;
+    position: relative;
 	font-family: Lato-Regular, sans-serif;
 	font-size: 2vw;
-	line-height: 2.2;
 	color: #bbbbbb;
-    display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     height: 40px;
     margin-top: 5px;
 }
+
