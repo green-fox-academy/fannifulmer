@@ -6,7 +6,7 @@ const tester = require('../todo_backend.js');
 
 test('Correct data returned', function (t) {
   req(app)
-    .get('/todos')
+    // .get('/todos')
     .expect('Content-Type', /json/)
     .expect(200)
     .end(function (err, res) {

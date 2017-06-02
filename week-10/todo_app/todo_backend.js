@@ -64,5 +64,11 @@ app.delete('/todos/:id', function(req, res){
     });
 });
 
+app.put('/todos/:id', function(req, res){
+    // let number = 0;
+    conn.query('UPDATE todos SET state="' + req.body.state +'" WHERE id="' + req.params.id + '"' , function(err,rows){
+        res.send(result);
+    });
+});
 
 app.listen(3000, () => {console.log('server is running')})
