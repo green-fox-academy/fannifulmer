@@ -36,7 +36,7 @@ app.get('/todos', function(req, res){
     });
 });
 
-app.get('/todos/:id', function(req, res){
+const tester = app.get('/todos/:id', function(req, res){
     conn.query('SELECT * FROM todos WHERE id = ?', req.params.id, function(err, rows){
         if(err) {
             console.log("PARA", err); 
@@ -50,15 +50,19 @@ app.get('/todos/:id', function(req, res){
         };
     });
 });
+module.exports = tester;
 
 app.post('/todos', function(req, res){
-    console.log('backend');
     conn.query('INSERT INTO todos (title) VALUES("' + req.body.title + '");'  ,function(err,rows){
         res.send(result);
     });
-    console.log('something happend');
 });
 
+app.delete('/todos/:id', function(req, res){
+    conn.query('DELETE FROM todos WHERE id="' + req.params.id + '"' , function(err,rows){
+        res.send(result);
+    });
+});
 
 
 app.listen(3000, () => {console.log('server is running')})
