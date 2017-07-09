@@ -15,5 +15,8 @@
     "mustache": "^2.3.0",
     "mysql": "^2.13.0",
     "tape": "^4.6.3"
+  },
+  "devDependencies": {
+    "supertest": "^3.0.0"
   }
 }

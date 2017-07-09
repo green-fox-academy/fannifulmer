@@ -28,7 +28,7 @@ app.get('/', function(req, res){
 app.get('/todos', function(req, res){
     conn.query('SELECT * FROM todos', function(err, rows){
         if(err) {
-            console.log("PARA", err); 
+            console.log("Error", err); 
         } else {
             result = rows;
         }
@@ -36,10 +36,10 @@ app.get('/todos', function(req, res){
     });
 });
 
-const tester = app.get('/todos/:id', function(req, res){
+app.get('/todos/:id', function(req, res){
     conn.query('SELECT * FROM todos WHERE id = ?', req.params.id, function(err, rows){
         if(err) {
-            console.log("PARA", err); 
+            console.log("Error", err); 
         } else {
             results = rows;
             if (results.length > 0){
@@ -50,7 +50,7 @@ const tester = app.get('/todos/:id', function(req, res){
         };
     });
 });
-module.exports = tester;
+// module.exports = tester;
 
 app.post('/todos', function(req, res){
     conn.query('INSERT INTO todos (title) VALUES("' + req.body.title + '");'  ,function(err,rows){
@@ -65,10 +65,12 @@ app.delete('/todos/:id', function(req, res){
 });
 
 app.put('/todos/:id', function(req, res){
-    // let number = 0;
     conn.query('UPDATE todos SET state="' + req.body.state +'" WHERE id="' + req.params.id + '"' , function(err,rows){
         res.send(result);
     });
 });
 
-app.listen(3000, () => {console.log('server is running')})
+module.exports = app;
+module.exports = conn;
+
+app.listen(3000, () => {console.log('server is running')});

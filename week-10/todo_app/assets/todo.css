@@ -10,8 +10,8 @@
 .todos {
     display: flex;
     background: #f7f7f7;
-    width: 30vw;
-    height: 70vh;
+    width: 25vw;
+    height: 65vh;
     flex-direction: column;
     margin: 20px;
     padding: 50px;
@@ -19,7 +19,7 @@
 
 h1 {
 	font-family: Lato-Light, sans-serif;
-	font-size: 4vw;
+	font-size: 3.8vw;
     font-weight: lighter;
 	color: #bbbbbb;
     align-self: center;
@@ -47,8 +47,8 @@ button {
 }
 
 img {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
 }
 
 .aligner {
@@ -56,7 +56,8 @@ img {
     justify-content: space-between;
     flex-direction: row;
     font-family: Lato-Regular, sans-serif;
-    font-size: 2vw;
+    font-size: 1.5vw;
     color: #bbbbbb;
     margin-top: 10px;
 }
+

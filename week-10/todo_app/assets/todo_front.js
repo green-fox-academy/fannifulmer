@@ -1,31 +1,11 @@
 'use strict';
 
-const button = document.querySelector('button');
 
 const ajaxQuest = function () {
     const ajax = function(method, url, callback) {
         const xhr = new XMLHttpRequest();
         xhr.open(method, url, true);
-
-        xhr.onreadystatechange = function() {
-            if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                var response = JSON.parse(xhr.response);
-                callback(response);
-            }
-        }
-        xhr.send();
-    };
-
-    return {
-        ajax
-    };
-};
-
-const ajaxPost = function() {
-    const inputArea = document.querySelector('.input_box')
-    const ajaxP = function(method, url, callback) {
-        const xhr = new XMLHttpRequest();
-        xhr.open(method, url, true);
+        xhr.setRequestHeader('Accept', 'application/json');
         xhr.setRequestHeader('Content-Type', 'application/json');
 
         xhr.onreadystatechange = function() {
@@ -34,36 +14,22 @@ const ajaxPost = function() {
                 callback(response);
             }
         }
-        var newInput = {
-            title: inputArea.value
-        }
-        xhr.send(JSON.stringify(newInput));
-    };
-    return {
-        ajaxP
-    };
-};
-
-const ajaxDelete = function() {
-    
-    const ajaxD = function(method, url, id, callback) {
-        const xhr = new XMLHttpRequest();
-        xhr.open(method, url + '/' + id, true);
-        xhr.setRequestHeader('Accept', 'application/json');
-        xhr.setRequestHeader('Content-Type', 'application/json');    
-
-        xhr.onreadystatechange = function() {
-            if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                var response = JSON.parse(xhr.response);
-                callback(response);
+        if (method =='POST'){
+            const inputArea = document.querySelector('.input_box');
+            var newInput = {
+                title: inputArea.value
             }
+            xhr.send(JSON.stringify(newInput));
+        } else {
+            xhr.send();
         }
-        xhr.send();
     };
+
     return {
-        ajaxD
+        ajax
     };
 };
+
 
 const ajaxPut = function () {
     const putAjax = function(method, url, id, state, callback) {
@@ -79,7 +45,6 @@ const ajaxPut = function () {
             }
         }
         if (state == 1){
-            console.log(state);
             var stateData = {
                 state: 0
             }
@@ -99,9 +64,7 @@ const ajaxPut = function () {
 
 const getTodos = function(){
     const ajax = ajaxQuest();
-    const post = ajaxPost();
     const renderer = renderTodos();
-    const deleted = ajaxDelete();
     const put = ajaxPut();
     
     const getTodo = function() {
@@ -112,9 +75,10 @@ const getTodos = function(){
     }
         
     const postTodo = function() {
+        const button = document.querySelector('button');
         const url = 'http://localhost:3000/todos'
         button.addEventListener('click', function(){
-            post.ajaxP('POST', url, function(response) {
+            ajax.ajax('POST', url, function(response) {
                 getTodo(response);
             })
         });
@@ -124,9 +88,10 @@ const getTodos = function(){
         const trashimage = document.querySelectorAll('.delete');
         trashimage.forEach(function(deletedImage){
             deletedImage.addEventListener('click', function(){
-                const url = 'http://localhost:3000/todos'
                 let id = deletedImage.dataset.id
-                deleted.ajaxD('DELETE', url, id, function(response) {
+                const url = 'http://localhost:3000/todos' + '/' + id;
+                console.log(url);
+                ajax.ajax('DELETE', url, function(response) {
                 getTodo(response);
                 });
             });
@@ -172,8 +137,9 @@ const renderTodos = function(){
     const todo_container = document.querySelector('.todo_item');
     
     const renderData = function(response, url) {
-        const output = Mustache.render("{{#todos}} <div class='aligner'><h2>{{title}}</h2><div><img src='assets/trash_icon.png' class='delete' data-id={{id}}><img src='assets/unchecked.png' class='checker' data-id={{id}} data-state={{state}}></img></div></div> {{/todos}}", {todos:response});
+        const output = Mustache.render("{{#todos}} <div class='aligner'><h2>{{title}}</h2><div><img src='assets/unchecked.png' class='checker' data-id={{id}} data-state={{state}}><img src='assets/trash_icon.png' class='delete' data-id={{id}}></img></div></div> {{/todos}}", {todos:response});
         todo_container.innerHTML = output;
+        const input_field= document.querySelector('.input_box').value="";
         app.deleteTodo();
         app.stateChecker();
         app.putTodo();
@@ -182,7 +148,6 @@ const renderTodos = function(){
         renderData
     }
 }
-
 
 const app = getTodos();
 app.getTodo();
